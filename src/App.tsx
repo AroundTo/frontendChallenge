@@ -1,16 +1,8 @@
 import React from 'react'
 import './App.css'
-import { useItems } from './graphql/hooks'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './pages/router'
 
-const App = () => {
-  const { items } = useItems()
-  return (
-    <div className="App">
-      <header className="App-header">
-        {items && items.map(item => <div key={item?.name}>{item?.name}</div>)}
-      </header>
-    </div>
-  )
-}
+const App = () => <RouterProvider router={router} />
 
 export default App
