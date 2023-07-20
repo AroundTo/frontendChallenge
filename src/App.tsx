@@ -1,16 +1,16 @@
 import React from 'react'
-import logo from './around-logo.webp'
 import './App.css'
+import { useItems } from './graphql/hooks'
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img alt="logo" className="breathing-animation" src={logo} />
-      <p>
-        Check <code>README.md</code> file
-      </p>
-    </header>
-  </div>
-)
+const App = () => {
+  const { items } = useItems()
+  return (
+    <div className="App">
+      <header className="App-header">
+        {items && items.map(item => <div key={item?.name}>{item?.name}</div>)}
+      </header>
+    </div>
+  )
+}
 
 export default App
