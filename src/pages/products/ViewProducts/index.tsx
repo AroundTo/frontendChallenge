@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import PageLayout from '../../../components/layouts/PageLayout/PageLayout'
 import ProductCard from '../../../components/products/ProductCard/ProductCard'
 import { useItems } from '../../../graphql/hooks'
@@ -6,7 +7,12 @@ import { useItems } from '../../../graphql/hooks'
 // TODO: handle fetch error
 
 const ViewProducts = () => {
+  const navigate = useNavigate()
   const { items, loading } = useItems()
+
+  const onProductCardClick = (name: string) => {
+    navigate(name)
+  }
 
   return (
     <PageLayout
@@ -24,7 +30,7 @@ const ViewProducts = () => {
               name={item.name}
               price={item.price}
               totalReviews={item.reviewsAggregate?.count || 0}
-              onClick={e => alert(item.name)}
+              onClick={e => onProductCardClick(item.name)}
             />
           )
       )}

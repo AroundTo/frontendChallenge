@@ -21,3 +21,18 @@ export const itemsQuery = gql(`
     }
   }
 `)
+
+export const itemByNameQuery = gql(`
+  query GetItem($name: String!){
+    getItem(name: $name){
+      name
+      img
+      price
+      description
+      reviews{
+        id
+        text
+      }
+    }
+  }
+`)
