@@ -1,16 +1,34 @@
+import PageLayout from '../../../components/layouts/PageLayout/PageLayout'
+import ProductCard from '../../../components/products/ProductCard/ProductCard'
 import { useItems } from '../../../graphql/hooks'
 
+// TODO: handle empty products list
+// TODO: handle fetch error
+
 const ViewProducts = () => {
-  const { items } = useItems()
+  const { items, loading } = useItems()
+
   return (
-    <>
-      <h1 className="text-4xl font-bold underline mb-3 text-primary-500 m-4">
-        List of Products
-      </h1>
-      <ol className="shadow-card m-4 p-4">
-        {items?.map(item => <li key={item?.name}>{item?.name}</li>)}
-      </ol>
-    </>
+    <PageLayout
+      className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-4"
+      loading={loading}
+      loadingMessage="Loading products"
+      title="Products"
+    >
+      {items?.map(
+        item =>
+          item && (
+            <ProductCard
+              key={item.name}
+              img={item.img}
+              name={item.name}
+              price={item.price}
+              totalReviews={item.reviewsAggregate?.count || 0}
+              onClick={e => alert(item.name)}
+            />
+          )
+      )}
+    </PageLayout>
   )
 }
 

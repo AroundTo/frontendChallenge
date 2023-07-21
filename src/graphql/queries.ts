@@ -12,8 +12,12 @@ export const apolloClient = new ApolloClient({
 export const itemsQuery = gql(`
   query GetItems {
     queryItem {
+      img
       name
-      description
+      price
+      reviewsAggregate{
+        count
+      }
     }
   }
 `)
