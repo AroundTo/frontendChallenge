@@ -4,7 +4,7 @@ import NavLink from '../../ui/links/NavLink'
 const currentDate = new Date()
 
 const RootLayout = () => (
-  <div className="relative min-h-screen w-full flex flex-col justify-between items-cente">
+  <div className="relative min-h-screen w-full flex flex-col justify-between items-center bg-gray-100">
     <header className="container lg:max-w-5xl mx-auto mt-6 mb-10 flex justify-end px-4">
       <nav className="text-gray-800 font-medium tracking-wider">
         <ul className="flex gap-4 lg:gap-6 items-center">

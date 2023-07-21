@@ -13,7 +13,7 @@ const ProductCard: CustomComponent<ProductCardType> = ({
 }) => (
   <div
     className={clsx(
-      'product-card border border-gray-300 rounded p-2 md:p-4 flex flex-col',
+      'product-card border border-gray-300 rounded p-2 md:p-4 flex flex-col bg-white',
       className
     )}
   >
