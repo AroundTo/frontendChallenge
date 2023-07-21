@@ -1,9 +1,5 @@
-import { Store } from '@/src/components/pages/Store'
+import { Shell } from '@/layout/Shell'
 
 export default function Home() {
-  return (
-    <>
-      <Store />
-    </>
-  )
+  return <Shell>{'test'}</Shell>
 }
