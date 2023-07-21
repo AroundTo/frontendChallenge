@@ -4,6 +4,8 @@ import {
   MediaQuery,
   useMantineTheme,
 } from '@mantine/core'
+import { Desktop } from './Desktop'
+import { Mobile } from './Mobile'
 
 export const Header = () => {
   const theme = useMantineTheme()
@@ -23,11 +25,15 @@ export const Header = () => {
     >
       <Flex align="center" h="100%">
         <MediaQuery smallerThan="md" styles={{ display: 'none' }}>
-          <div style={{ width: '100%' }}>{'desktop'}</div>
+          <div style={{ width: '100%' }}>
+            <Desktop />
+          </div>
         </MediaQuery>
 
         <MediaQuery largerThan="md" styles={{ display: 'none' }}>
-          <div style={{ width: '100%' }}>{'mobile'}</div>
+          <div style={{ width: '100%' }}>
+            <Mobile />
+          </div>
         </MediaQuery>
       </Flex>
     </MantineHeader>
