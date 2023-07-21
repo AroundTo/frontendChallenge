@@ -36,3 +36,17 @@ export const itemByNameQuery = gql(`
     }
   }
 `)
+
+export const reviewsQuery = gql(`
+  query GetReviews {
+    queryReview {
+      id
+      text
+      item{
+        name
+        img
+        description
+      }
+    }
+  }
+`)

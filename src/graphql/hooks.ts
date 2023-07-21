@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import { itemByNameQuery, itemsQuery } from './queries'
+import { itemByNameQuery, itemsQuery, reviewsQuery } from './queries'
 
 export const useItems = () => {
   const { data, error, loading } = useQuery(itemsQuery, {
@@ -22,6 +22,17 @@ export const useItem = (name: string) => {
 
   return {
     item: data?.getItem,
+    loading,
+    error,
+  }
+}
+
+export const useReviews = () => {
+  const { data, error, loading } = useQuery(reviewsQuery, {
+    fetchPolicy: 'network-only', // new data will be fetched everytime instead of using cache
+  })
+  return {
+    reviews: data?.queryReview,
     loading,
     error,
   }

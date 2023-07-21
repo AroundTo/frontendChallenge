@@ -8,6 +8,7 @@ import ViewProducts from './products/ViewProducts'
 import RootLayout from '../components/layouts/RootLayout'
 import NotFoundPage from './NotFoundPage'
 import ProductDetails from './products/ProductDetails'
+import ViewReviews from './reviews/ViewReviews'
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +19,7 @@ export const router = createBrowserRouter(
           <Route index element={<ViewProducts />} />
           <Route element={<ProductDetails />} path=":productName" />
         </Route>
-        <Route element={<div>List reviews</div>} path="reviews" />
+        <Route element={<ViewReviews />} path="reviews" />
         <Route element={<NotFoundPage />} path="*" />
       </Route>
     </Route>

@@ -37,7 +37,7 @@ const ProductDetails = () => {
         {item?.reviews?.map(
           review =>
             review && (
-              <li key={review.id} className="p-4 odd:bg-white even:bg-slate-50">
+              <li key={review.id} className="p-4 odd:bg-white even:bg-gray-50">
                 <p>{review.text}</p>
                 <p className="text-gray-500 text-sm">ID: {review.id}</p>
               </li>
