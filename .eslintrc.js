@@ -94,6 +94,7 @@ module.exports = {
     'react/no-deprecated': 'error',
     'react/no-typos': 'error',
     'react/no-unsafe': 'error',
+    'react/prop-types': 'off',
     'react/sort-prop-types': 'error',
     'react/static-property-placement': 'error',
     'no-loops/no-loops': 'error',
