@@ -8,7 +8,7 @@ const RootLayout = () => (
     <header className="container lg:max-w-5xl mx-auto mt-6 mb-10 flex justify-end px-4">
       <nav className="text-gray-800 font-medium tracking-wider">
         <ul className="flex gap-4 lg:gap-6 items-center">
-          <NavLink to="/">Products</NavLink>
+          <NavLink to="/products">Products</NavLink>
           <NavLink to="/reviews">Reviews</NavLink>
         </ul>
       </nav>
