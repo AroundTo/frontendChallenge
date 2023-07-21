@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import NavLink from '../../components/links/NavLink'
+import NavLink from '../../ui/links/NavLink'
 
 const currentDate = new Date()
 

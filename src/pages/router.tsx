@@ -5,7 +5,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom'
 import ViewProducts from './products/ViewProducts'
-import RootLayout from '../layouts/RootLayout'
+import RootLayout from '../components/layouts/RootLayout'
 import NotFoundPage from './NotFoundPage'
 
 export const router = createBrowserRouter(

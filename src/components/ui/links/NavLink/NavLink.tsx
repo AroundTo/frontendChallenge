@@ -1,5 +1,5 @@
 import { NavLink as Link } from 'react-router-dom'
-import { CustomComponent } from '../../../types'
+import { CustomComponent } from '../../../../types'
 import clsx from 'clsx'
 import { NavLinkType } from './NavLink.types'
 
