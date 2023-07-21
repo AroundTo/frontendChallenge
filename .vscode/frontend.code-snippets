@@ -1,0 +1,37 @@
+{
+  // Create frontend page
+  "frontend_page": {
+    "prefix": "frontend_page",
+    "body": [
+      "import { NextPage } from 'next'",
+      "",
+      "export const ${1}Page: NextPage = () => {",
+      "  return <div>{'Page for ${1}'}</div>",
+      "}",
+      "",
+      "export default ${1}Page",
+      ""
+    ],
+    "description": "Create frontend page"
+  },
+  // Create frontend component
+  "frontend_component": {
+    "prefix": "frontend_component",
+    "body": [
+      "export const ${TM_FILENAME_BASE} = () => {",
+      "  return <div>{'${TM_FILENAME_BASE}'}</div>",
+      "}"
+    ],
+    "description": "Create frontend component"
+  },
+  // Create frontend component with children
+  "frontend_component_with_child": {
+    "prefix": "frontend_component_with_child",
+    "body": [
+      "export const ${TM_FILENAME_BASE} = ({ children }: { children: React.ReactNode }) => {",
+      "  return <div>{children}</div>",
+      "}"
+    ],
+    "description": "Create frontend component with children"
+  }
+}
