@@ -1,4 +1,4 @@
-import { Shell } from '@/layout/Shell'
+import { Shell } from '@/src/components/layout/Shell'
 import { NextPage } from 'next'
 
 export const ProductsNextPage: NextPage = () => {

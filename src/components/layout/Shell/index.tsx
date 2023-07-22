@@ -18,7 +18,6 @@ export const Shell = ({
       <Head>
         <title>{`Around${title ? ` | ${title}` : ''}`}</title>
       </Head>
-
       <RouterTransition />
       <BackgroundPattern>
         <BodyBox>

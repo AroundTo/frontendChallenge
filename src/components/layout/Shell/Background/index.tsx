@@ -22,11 +22,11 @@ export const BackgroundPattern = ({
 
         transition: '1000ms',
 
-        backgroundColor: theme.colors.blue[6],
+        backgroundColor: theme.colors.pink[6],
         backgroundImage: getBackgroundPattern(
-          'anchorsAway',
-          theme.colors.blue[8].replace('#', ''),
-          1
+          'signal',
+          theme.colors.dark[8].replace('#', ''),
+          0.2
         ),
       }}
     >

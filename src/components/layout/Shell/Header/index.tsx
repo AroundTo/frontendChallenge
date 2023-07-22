@@ -9,7 +9,6 @@ import { Mobile } from './Mobile'
 
 export const Header = () => {
   const theme = useMantineTheme()
-
   return (
     <MantineHeader
       bg="#0000"

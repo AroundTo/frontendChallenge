@@ -1,7 +1,7 @@
 import { Anchor, Center, Flex } from '@mantine/core'
 
+import { AppIcon } from '@/src/components/svgs/AppIcon'
 import { APP_URLS } from '@/src/constants/URLS'
-import { QSDIcon } from '@/src/svgs/QSDIcons'
 import Link from 'next/link'
 import { AuthAvatarMobile } from './AuthAvatar'
 import { MenuLinks } from './Menu'
@@ -13,7 +13,7 @@ export const Mobile = () => {
 
       <Center w="100%">
         <Anchor href={APP_URLS.INDEX} component={Link}>
-          <QSDIcon svgProps={{ height: 30 }} variant="qsdiconslargo" />
+          <AppIcon svgProps={{ height: 30 }} variant="qsdiconslargo" />
         </Anchor>
       </Center>
 
