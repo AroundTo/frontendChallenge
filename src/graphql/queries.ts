@@ -50,3 +50,14 @@ export const reviewsQuery = gql(`
     }
   }
 `)
+
+export const createReviewMutation = gql(`
+  mutation CreateReview($input: [AddReviewInput!]!) {
+    addReview(input: $input) {
+      review{
+        id
+        text
+      }
+    }
+  }
+`)

@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom'
 import PageLayout from '../../../components/layouts/PageLayout/PageLayout'
 import { useItem } from '../../../graphql/hooks'
+import { useNewProductReviewModal } from '../../../components/modals/NewProductReviewModal'
+import Button from '../../../components/ui/Button'
 
 // TODO: handle empty product's reviews
 // TODO: handle fetch error
@@ -8,6 +10,7 @@ import { useItem } from '../../../graphql/hooks'
 const ProductDetails = () => {
   const { productName = '' } = useParams()
   const { item, loading } = useItem(productName)
+  const { open, render } = useNewProductReviewModal(productName)
 
   return (
     <PageLayout
@@ -17,6 +20,7 @@ const ProductDetails = () => {
       notFoundMessage={!item && !loading ? 'Product not found' : ''}
       title="Product details"
     >
+      {render}
       <div className="grid grid-cols-3">
         <img
           alt={item?.name}
@@ -32,7 +36,15 @@ const ProductDetails = () => {
           <p>{item?.description}</p>
         </div>
       </div>
-      <p className="font-semibold text-lg mt-6 mb-3">Reviews</p>
+      <div className="flex justify-between items-center mt-6 mb-3">
+        <p className="font-semibold text-lg" role="presentation">
+          Reviews
+        </p>
+        <Button color="outline-gray" onClick={open}>
+          + Add review
+        </Button>
+      </div>
+
       <ul className="divide-y divide-slate-200 border">
         {item?.reviews?.map(
           review =>
