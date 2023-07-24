@@ -51,3 +51,88 @@ While evaluating your submission, we will consider the following aspects:
 6. **Extra features:** Any extra feature that you consider that could be useful for the project
 
 Feel free to reach out if you have any questions or need further clarification. Good luck, and happy coding! 🚀
+
+## Environment Variables
+
+To run this project, you'll need to add the following env vars to you `.env`:
+
+```terminal
+REACT_APP_GRAPHQL_API=https://...
+REACT_APP_GRAPHQL_API_WSS=wss://...
+````
+
+You can also make a copy of content from `.env.sample` then replace the vars values with the correct ones.
+
+
+## Running locally
+
+#### Install all dependecies
+
+```bash
+  npm install
+```
+
+#### Generate GraphQL typing
+
+make sure to update `.codegen.ts` with the correct API URL that will be used to generate types.
+
+```javascript
+/* codegen.ts*/
+const config: CodegenConfig = {
+  [...]
+  schema: 'https://blue-surf-1040009.us-east-1.aws.cloud.dgraph.io/graphql',
+  [...]
+}
+```
+
+then run:
+
+```bash
+  npm run graphql:generate
+```
+
+#### Start the server
+
+```bash
+  npm start
+```
+
+### running locally on watch mode
+
+If you plan to change GraphQL queries/mutation/subscription while coding, you can run the following command that will watch for every change avoiding running `npm run graphql:generate` and `npm start` separately.
+
+```
+  npm run dev
+```
+
+
+## Utility scripts
+
+#### Check for eslint errors:
+
+```bash
+  npm run lint
+```
+
+#### Check and fix eslint errors:
+
+```bash
+  npm run lint:fix
+```
+
+#### Run GraphQL Playground:
+
+make sure to update `./src/graphql/playground/graphqlPlayground.js` with the correct API URL:
+
+```javascript
+[...]
+const GRAPHQL_API = 'https://blue-surf-1040009.us-east-1.aws.cloud.dgraph.io/graphql';
+[...]
+```
+
+then run:
+
+```bash
+  npm run graphql:play
+```
+
