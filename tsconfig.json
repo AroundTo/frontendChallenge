@@ -17,6 +17,6 @@
     "incremental": true
   },
   "include": ["**/*.ts", "**/*.tsx", "lambdas.js"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "./src/graphql/generated"],
   "typeRoots": ["./src/types"]
 }

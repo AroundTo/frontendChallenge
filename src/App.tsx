@@ -1,19 +1,8 @@
-import React from 'react';
-import logo from './around-logo.webp';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './pages/router'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="breathing-animation" alt="logo" />
-        <p>
-          Check <code>README.md</code> file
-        </p>
-        
-      </header>
-    </div>
-  );
-}
+const App = () => <RouterProvider router={router} />
 
-export default App;
+export default App
