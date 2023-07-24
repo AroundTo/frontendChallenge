@@ -30,7 +30,7 @@ const ViewProducts = () => {
               name={item.name}
               price={item.price}
               totalReviews={item.reviewsAggregate?.count || 0}
-              onClick={e => onProductCardClick(item.name)}
+              onClick={() => onProductCardClick(item.name)}
             />
           )
       )}

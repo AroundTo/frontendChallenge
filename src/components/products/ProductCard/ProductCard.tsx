@@ -2,6 +2,7 @@ import { CustomComponent } from '../../../types'
 import { ProductCardType } from './ProductCard.types'
 import './ProductCard.styles.scss'
 import clsx from 'clsx'
+import Button from '../../ui/Button'
 
 const ProductCard: CustomComponent<ProductCardType> = ({
   img,
@@ -26,13 +27,9 @@ const ProductCard: CustomComponent<ProductCardType> = ({
     <p className="text-xl text-primary-600 font-semibold my-2 ml-2">
       $ {price}
     </p>
-    <button
-      className="bg-primary-700 p-2 text-center rounded text-white font-semibold uppercase text-sm cursor-pointer hover:bg-primary-800"
-      type="button"
-      onClick={onClick}
-    >
+    <Button className="uppercase font-semibold" onClick={onClick}>
       Reviews ({totalReviews < 1000 ? totalReviews : '999+'})
-    </button>
+    </Button>
   </div>
 )
 
