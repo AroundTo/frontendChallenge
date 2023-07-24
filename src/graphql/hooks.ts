@@ -1,9 +1,9 @@
-import { useMutation, useQuery } from '@apollo/client'
+import { useMutation, useQuery, useSubscription } from '@apollo/client'
 import {
   createReviewMutation,
-  itemByNameQuery,
+  itemByNameSubscription,
   itemsQuery,
-  reviewsQuery,
+  reviewsSubscription,
 } from './queries'
 
 export const useItems = () => {
@@ -18,7 +18,7 @@ export const useItems = () => {
 }
 
 export const useItem = (name: string) => {
-  const { data, error, loading } = useQuery(itemByNameQuery, {
+  const { data, error, loading } = useSubscription(itemByNameSubscription, {
     fetchPolicy: 'network-only', // new data will be fetched everytime instead of using cache
     variables: {
       name,
@@ -33,7 +33,7 @@ export const useItem = (name: string) => {
 }
 
 export const useReviews = () => {
-  const { data, error, loading } = useQuery(reviewsQuery, {
+  const { data, error, loading } = useSubscription(reviewsSubscription, {
     fetchPolicy: 'network-only', // new data will be fetched everytime instead of using cache
   })
   return {

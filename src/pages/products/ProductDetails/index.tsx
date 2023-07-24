@@ -38,7 +38,7 @@ const ProductDetails = () => {
       </div>
       <div className="flex justify-between items-center mt-6 mb-3">
         <p className="font-semibold text-lg" role="presentation">
-          Reviews
+          Reviews ({item?.reviews?.length || 0})
         </p>
         <Button color="outline-gray" onClick={open}>
           + Add review
