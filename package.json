@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "schema:generate": "graphql-codegen --config codegen.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.7.17",
@@ -29,12 +28,5 @@
     "react-dom": "18.2.0",
     "tabler-icons-react": "^1.56.0",
     "typescript": "5.1.6"
-  },
-  "devDependencies": {
-    "@graphql-codegen/cli": "^4.0.1",
-    "@graphql-codegen/introspection": "^4.0.0",
-    "@graphql-codegen/typescript": "^4.0.1",
-    "@graphql-codegen/typescript-operations": "^4.0.1",
-    "@graphql-codegen/typescript-react-apollo": "^3.3.7"
   }
 }

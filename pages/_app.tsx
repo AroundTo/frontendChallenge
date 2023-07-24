@@ -27,7 +27,7 @@ export default function App(props: AppProps) {
           withNormalizeCSS
           theme={{
             colorScheme: 'light',
-            primaryColor: 'dark',
+            primaryColor: 'pink',
           }}
         >
           <Component {...pageProps} />

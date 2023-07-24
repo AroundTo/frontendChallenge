@@ -3,7 +3,7 @@ import { Box } from '@mantine/core'
 export const BodyBox = ({ children }: { children: React.ReactNode }) => {
   return (
     <Box
-      bg="white"
+      bg="#F8F9FA"
       sx={{
         transition: '1000ms',
         borderRadius: 32,

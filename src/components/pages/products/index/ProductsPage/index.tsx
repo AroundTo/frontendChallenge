@@ -1,11 +1,13 @@
 import { Shell } from '@/src/components/layout/Shell'
-import { Container } from '@mantine/core'
+import { Container, Divider, Title } from '@mantine/core'
 import { ProductsContainer } from './ProductsContainer'
 
 export const ProductsPage = () => {
   return (
     <Shell>
       <Container>
+        <Title>{'Products'}</Title>
+        <Divider />
         <ProductsContainer />
       </Container>
     </Shell>
