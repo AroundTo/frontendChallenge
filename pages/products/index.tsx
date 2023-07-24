@@ -1,8 +1,8 @@
-import { Shell } from '@/src/components/layout/Shell'
+import { ProductsPage } from '@/src/components/pages/products/index/ProductsPage'
 import { NextPage } from 'next'
 
 export const ProductsNextPage: NextPage = () => {
-  return <Shell>{'Productss'}</Shell>
+  return <ProductsPage />
 }
 
 export default ProductsNextPage
