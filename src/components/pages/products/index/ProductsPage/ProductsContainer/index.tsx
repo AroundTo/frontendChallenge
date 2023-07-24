@@ -1,7 +1,7 @@
 import { GraphQLProducts } from '@/src/types/Products'
 import { gql, useQuery } from '@apollo/client'
 import { Grid } from '@mantine/core'
-import { ProductCard } from './ProductCard'
+import { ProductCard } from './Card'
 
 export const ProductsContainer = () => {
   const { data, loading } = useQuery<GraphQLProducts>(gql`
