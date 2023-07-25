@@ -1,8 +1,8 @@
-import { CreateProductPage } from '@/src/components/pages/products/create/CreateProductPage'
+import { CreateItemPage } from '@/src/components/pages/items/create/CreateItemPage'
 import { NextPage } from 'next'
 
-export const CreateProductNextPage: NextPage = () => {
-  return <CreateProductPage />
+export const CreateItemNextPage: NextPage = () => {
+  return <CreateItemPage />
 }
 
-export default CreateProductNextPage
+export default CreateItemNextPage

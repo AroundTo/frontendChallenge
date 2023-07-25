@@ -1,5 +1,6 @@
 import { Signature } from '@/src/components/svgs/Signature'
-import { Flex, Footer as MatineFooter, Text } from '@mantine/core'
+import { Anchor, Flex, Footer as MatineFooter } from '@mantine/core'
+import Link from 'next/link'
 
 export const Footer = () => {
   return (
@@ -15,11 +16,24 @@ export const Footer = () => {
         })}
       >
         <Flex direction="column">
-          <Text size="sm" color="gray" align="center">
+          <Anchor
+            size="sm"
+            component={Link}
+            href="https://github.com/AroundTo/frontendChallenge"
+            color="gray"
+            align="center"
+            target="_blank"
+          >
             {'Around Front End Challenge'}
-          </Text>
+          </Anchor>
         </Flex>
-        <Signature svgProps={{ height: 40 }} color="#aaa" />
+        <Anchor
+          target="_blank"
+          href="https://www.julian-medina.dev/"
+          component={Link}
+        >
+          <Signature svgProps={{ height: 40 }} color="#aaa" />
+        </Anchor>
       </Flex>
     </MatineFooter>
   )

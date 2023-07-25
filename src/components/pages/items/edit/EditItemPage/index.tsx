@@ -2,11 +2,11 @@ import { Shell } from '@/src/components/layout/Shell'
 import { GraphQLProduct } from '@/src/types/GraphQL'
 import { gql, useQuery } from '@apollo/client'
 import { Container, Divider, Title } from '@mantine/core'
-import { EditProductBreadcrums } from './Breadcrums'
-import { EditProductForm } from './EditProductForm'
-import { LoadingEditProductPage } from './Loading'
+import { EditItemBreadcrums } from './Breadcrums'
+import { EditItemForm } from './EditItemForm'
+import { LoadingEditItemPage } from './Loading'
 
-export const EditProductPage = ({ productId }: { productId: string }) => {
+export const EditItemPage = ({ productId }: { productId: string }) => {
   const { data, loading } = useQuery<GraphQLProduct>(gql`
   query GetItem {
     getItem(name: "${productId}") {
@@ -32,10 +32,10 @@ export const EditProductPage = ({ productId }: { productId: string }) => {
       <Container mt={20}>
         {!loading && data && data.getItem ? (
           <>
-            <EditProductBreadcrums productId={data?.getItem.name || 'item'} />
+            <EditItemBreadcrums productId={data?.getItem.name || 'item'} />
             <Divider my={10} />
             <Title>{`Edit ${data?.getItem.name || 'item'}`}</Title>
-            <EditProductForm
+            <EditItemForm
               initialValues={{
                 name: data.getItem.name,
                 img: data.getItem.img,
@@ -45,7 +45,7 @@ export const EditProductPage = ({ productId }: { productId: string }) => {
             />
           </>
         ) : (
-          <LoadingEditProductPage />
+          <LoadingEditItemPage />
         )}
       </Container>
     </Shell>

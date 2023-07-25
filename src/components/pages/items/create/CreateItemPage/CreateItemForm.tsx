@@ -1,5 +1,5 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { GraphQLEditItem } from '@/src/types/GraphQL'
+import { GraphQLAddItem } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import {
   Box,
@@ -13,11 +13,23 @@ import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { Edit } from 'tabler-icons-react'
+import { Plus } from 'tabler-icons-react'
 
-const UPDATE_ITEM_MUTATION = gql`
-  mutation UpdateItem($filter: ItemFilter!, $set: ItemPatch!) {
-    updateItem(input: { filter: $filter, set: $set }) {
+const ADD_ITEM_MUTATION = gql`
+  mutation AddItem(
+    $name: String!
+    $img: String!
+    $price: Float!
+    $description: String!
+  ) {
+    addItem(
+      input: {
+        name: $name
+        img: $img
+        price: $price
+        description: $description
+      }
+    ) {
       numUids
     }
   }
@@ -26,66 +38,72 @@ const UPDATE_ITEM_MUTATION = gql`
 type FormValues = {
   name: string
   img: string
-  price: number
+  price: string
   description: string
 }
 
-interface EditProductFormProps {
-  initialValues: FormValues
-}
-
-export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
+export const CreateItemForm = () => {
   const form = useForm<FormValues>({
-    initialValues,
+    initialValues: {
+      name: '',
+      img: '',
+      price: '',
+      description: '',
+    },
   })
 
-  const [updateItem, { data: updateItemData, loading }] =
-    useMutation<GraphQLEditItem>(UPDATE_ITEM_MUTATION)
+  const [addItem, { data: addItemData, loading }] =
+    useMutation<GraphQLAddItem>(ADD_ITEM_MUTATION)
 
   const router = useRouter()
   const handleSubmit = (values: FormValues) => {
-    updateItem({
+    addItem({
       variables: {
-        filter: { name: { eq: initialValues.name } },
-        set: {
-          img: values.img,
-          price: values.price,
-          description: values.description,
-        },
+        name: values.name,
+        img: values.img,
+        price: parseFloat(values.price),
+        description: values.description,
       },
     }).catch((error) => {
       notifications.show({
         color: 'red',
-        title: 'Update Item Failed',
+        title: 'Add Item Failed',
         message: error.message,
       })
     })
   }
 
-  // useEffect to handle notifications after updating the item
+  // useEffect to handle notifications after adding a new item
   useEffect(() => {
-    if (updateItemData && updateItemData.updateItem.numUids === 1) {
-      // If numUids is 1, show successful update notification
+    if (addItemData && addItemData.addItem.numUids === 1) {
+      // If numUids is 1, show successful add notification
       notifications.show({
         color: 'green',
-        title: 'Update Successful',
-        message: 'Your item has been successfully updated.',
+        title: 'Item Added',
+        message: 'Your item has been successfully added.',
       })
-      router.push(`${APP_URLS.PRODUCTS}/${initialValues.name}`)
-    } else if (updateItemData && updateItemData.updateItem.numUids === 0) {
-      // If numUids is 0, show update failed notification
+      router.push(`${APP_URLS.PRODUCTS}/${form.values.name}`)
+    } else if (addItemData && addItemData.addItem.numUids === 0) {
+      // If numUids is 0, show add failed notification
       notifications.show({
         color: 'red',
-        title: 'Update Item Failed',
-        message: 'Failed to update the item.',
+        title: 'Add Item Failed',
+        message: 'Failed to add the item.',
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [updateItemData])
+  }, [addItemData])
 
   return (
     <Box m="xl">
       <form onSubmit={form.onSubmit(handleSubmit)}>
+        <TextInput
+          withAsterisk
+          label="Name"
+          placeholder="Product Name"
+          {...form.getInputProps('name')}
+        />
+
         <TextInput
           mt="md"
           withAsterisk
@@ -111,8 +129,8 @@ export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
         />
 
         <Group position="right" mt="md">
-          <Button leftIcon={<Edit />} type="submit" loading={loading}>
-            {'Edit'}
+          <Button leftIcon={<Plus />} type="submit" loading={loading}>
+            {'Create'}
           </Button>
         </Group>
       </form>

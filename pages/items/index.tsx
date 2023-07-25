@@ -1,4 +1,4 @@
-import { ProductsPage } from '@/src/components/pages/products/index/ProductsPage'
+import { ProductsPage } from '@/src/components/pages/items/index/ProductsPage'
 import { NextPage } from 'next'
 
 export const ProductsNextPage: NextPage = () => {

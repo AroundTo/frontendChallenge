@@ -13,7 +13,7 @@ export interface Props {
   productId: string
 }
 
-export const LoadedProduct = ({
+export const LoadedItem = ({
   name,
   description,
   img,

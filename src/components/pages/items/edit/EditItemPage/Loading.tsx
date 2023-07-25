@@ -1,6 +1,6 @@
 import { Breadcrumbs, Divider, Flex, Skeleton } from '@mantine/core'
 
-export const LoadingEditProductPage = () => {
+export const LoadingEditItemPage = () => {
   return (
     <>
       <Flex direction="column">

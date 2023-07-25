@@ -1,16 +1,16 @@
 import { Shell } from '@/src/components/layout/Shell'
 import { Container, Divider, Title } from '@mantine/core'
-import { CreateProductBreadcrums } from './Breadcrums'
-import { CreateProductForm } from './CreateProductForm'
+import { CreateItemBreadcrums } from './Breadcrums'
+import { CreateItemForm } from './CreateItemForm'
 
-export const CreateProductPage = () => {
+export const CreateItemPage = () => {
   return (
     <Shell title="Create item">
       <Container mt={20}>
-        <CreateProductBreadcrums />
+        <CreateItemBreadcrums />
         <Divider my={10} />
         <Title>{'Create item'}</Title>
-        <CreateProductForm />
+        <CreateItemForm />
       </Container>
     </Shell>
   )
