@@ -16,7 +16,7 @@ export const ProductHeader = ({ name }: { name: string }) => {
         </Anchor>
       </Breadcrumbs>
       <Flex justify="end" gap={4}>
-        <ActionIcon>
+        <ActionIcon href={`${APP_URLS.EDIT_PRODUCT}/${name}`} component={Link}>
           <Edit size="1.5rem" />
         </ActionIcon>
         <ActionIcon>

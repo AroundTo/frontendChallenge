@@ -34,6 +34,10 @@ export interface GraphQLAddItem {
   addItem: GraphQLResponse
 }
 
+export interface GraphQLEditItem {
+  updateItem: GraphQLResponse
+}
+
 export interface GraphQLDeleteItem {
   deleteItem: { msg: string; numUids: number }
 }

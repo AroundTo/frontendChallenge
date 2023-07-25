@@ -4,7 +4,7 @@ import { gql, useMutation } from '@apollo/client'
 import { ActionIcon, Loader, Text, useMantineTheme } from '@mantine/core'
 import { modals } from '@mantine/modals'
 import { notifications } from '@mantine/notifications'
-import { useRouter } from 'next/router' // Importar el enrutador de Next.js
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { Trash, TrashX } from 'tabler-icons-react'
 

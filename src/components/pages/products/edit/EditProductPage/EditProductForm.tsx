@@ -1,5 +1,5 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { GraphQLAddItem } from '@/src/types/Products'
+import { GraphQLEditItem } from '@/src/types/Products'
 import { gql, useMutation } from '@apollo/client'
 import {
   Box,
@@ -13,23 +13,11 @@ import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { Plus } from 'tabler-icons-react'
+import { Edit } from 'tabler-icons-react'
 
-const ADD_ITEM_MUTATION = gql`
-  mutation AddItem(
-    $name: String!
-    $img: String!
-    $price: Float!
-    $description: String!
-  ) {
-    addItem(
-      input: {
-        name: $name
-        img: $img
-        price: $price
-        description: $description
-      }
-    ) {
+const UPDATE_ITEM_MUTATION = gql`
+  mutation UpdateItem($filter: ItemFilter!, $set: ItemPatch!) {
+    updateItem(input: { filter: $filter, set: $set }) {
       numUids
     }
   }
@@ -38,57 +26,58 @@ const ADD_ITEM_MUTATION = gql`
 type FormValues = {
   name: string
   img: string
-  price: string
+  price: number
   description: string
 }
 
-export const CreateProductForm = () => {
+interface EditProductFormProps {
+  initialValues: FormValues
+}
+
+export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
   const form = useForm<FormValues>({
-    initialValues: {
-      name: '',
-      img: '',
-      price: '',
-      description: '',
-    },
+    initialValues,
   })
 
-  const [addItem, { data: addItemData, loading }] =
-    useMutation<GraphQLAddItem>(ADD_ITEM_MUTATION)
+  const [updateItem, { data: updateItemData, loading }] =
+    useMutation<GraphQLEditItem>(UPDATE_ITEM_MUTATION)
 
   const router = useRouter()
   const handleSubmit = (values: FormValues) => {
-    addItem({
+    updateItem({
       variables: {
-        name: values.name,
-        img: values.img,
-        price: parseFloat(values.price),
-        description: values.description,
+        filter: { name: { eq: values.name } },
+        set: {
+          img: values.img,
+          price: values.price,
+          description: values.description,
+        },
       },
     }).catch((error) => {
-      console.error('Error adding item:', error.message)
+      console.error('Error updating item:', error.message)
     })
   }
 
-  // useEffect to handle notifications after adding a new item
+  // useEffect to handle notifications after updating the item
   useEffect(() => {
-    if (addItemData && addItemData.addItem.numUids === 1) {
-      // If numUids is 1, show successful add notification
+    if (updateItemData && updateItemData.updateItem.numUids === 1) {
+      // If numUids is 1, show successful update notification
       notifications.show({
         color: 'green',
-        title: 'Item Added',
-        message: 'Your item has been successfully added.',
+        title: 'Update Successful',
+        message: 'Your item has been successfully updated.',
       })
       router.push(`${APP_URLS.PRODUCTS}/${form.values.name}`)
-    } else if (addItemData && addItemData.addItem.numUids === 0) {
-      // If numUids is 0, show add failed notification
+    } else if (updateItemData && updateItemData.updateItem.numUids === 0) {
+      // If numUids is 0, show update failed notification
       notifications.show({
         color: 'red',
-        title: 'Add Item Failed',
-        message: 'Failed to add the item.',
+        title: 'Update Item Failed',
+        message: 'Failed to update the item.',
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addItemData])
+  }, [updateItemData])
 
   return (
     <Box m="xl">
@@ -125,8 +114,8 @@ export const CreateProductForm = () => {
         />
 
         <Group position="right" mt="md">
-          <Button leftIcon={<Plus />} type="submit" loading={loading}>
-            {'Create'}
+          <Button leftIcon={<Edit />} type="submit" loading={loading}>
+            {'Edit'}
           </Button>
         </Group>
       </form>
