@@ -1,10 +1,5 @@
-import { Shell } from '@/src/components/layout/Shell'
-import { Container } from '@mantine/core'
+import { IndexPage } from '@/src/components/pages/index/IndexPage'
 
-export default function Home() {
-  return (
-    <Shell>
-      <Container>{'Home page'}</Container>
-    </Shell>
-  )
+export default function IndexNextPage() {
+  return <IndexPage />
 }

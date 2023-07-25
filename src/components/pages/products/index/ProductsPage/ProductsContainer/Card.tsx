@@ -1,9 +1,20 @@
 import { APP_URLS } from '@/src/constants/URLS'
 import { Product } from '@/src/types/GraphQL'
-import { Card, Image, Text } from '@mantine/core'
+import { Card, Image, Skeleton, Text } from '@mantine/core'
 import Link from 'next/link'
 
-export const ProductCard = ({ product }: { product: Product }) => {
+export const ProductCard = ({ product }: { product?: Product }) => {
+  if (!product)
+    return (
+      <Card shadow="sm" radius="md" withBorder>
+        <Card.Section>
+          <Skeleton h={220} />
+        </Card.Section>
+        <Skeleton mt={8} h={20} />
+        <Skeleton mb={4} mt={10} h={12} />
+      </Card>
+    )
+
   return (
     <Card
       shadow="sm"

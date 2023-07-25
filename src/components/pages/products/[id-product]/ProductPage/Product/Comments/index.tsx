@@ -1,6 +1,7 @@
 import { Review } from '@/src/types/GraphQL'
-import { Box, Card, Text, Title } from '@mantine/core'
+import { Box, Title } from '@mantine/core'
 import { AddAComment } from './AddAComment'
+import { CommentBox } from './CommentBox'
 
 export const ProductComments = ({
   reviews,
@@ -11,11 +12,9 @@ export const ProductComments = ({
 }) => {
   return (
     <Box>
-      <Title order={2}>{'Comments'}</Title>
-      {reviews.map(({ text }, index) => (
-        <Card my="xl" key={`comment-${index}`} shadow="xs">
-          <Text> {text}</Text>
-        </Card>
+      <Title order={1}>{'Comments'}</Title>
+      {reviews.map(({ text, id }, index) => (
+        <CommentBox id={id} key={`comment-${id}`} text={text} index={index} />
       ))}
       <AddAComment productId={productId} />
     </Box>

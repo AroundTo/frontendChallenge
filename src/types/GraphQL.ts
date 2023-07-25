@@ -20,3 +20,13 @@ export interface ReviewsAggregate {
   textMin: string
   textMax: string
 }
+
+export interface Delete {
+  deleteReview: DeleteReview
+}
+
+export interface DeleteReview {
+  msg: string
+  numUids: number
+  __typename: string
+}

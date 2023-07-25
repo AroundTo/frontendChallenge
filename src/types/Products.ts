@@ -7,3 +7,21 @@ export type GraphQLProduct = {
 export interface GraphQLProducts {
   queryItem: Product[]
 }
+
+export interface GraphQLDeleteReview {
+  deleteReview: DeleteReview
+}
+
+export interface DeleteReview {
+  msg: string
+  numUids: number
+  __typename: string
+}
+
+export interface GraphQLAddReview {
+  addReview: AddReview
+}
+
+export interface AddReview {
+  numUids: number
+}

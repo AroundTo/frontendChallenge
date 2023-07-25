@@ -15,17 +15,28 @@ export const ProductsContainer = () => {
     }
   `)
 
-  if (loading) return <div>{'Loading...'}</div>
-  if (!data || !data.queryItem) return <div>{'No data :('}</div>
-
   return (
     <>
       <Grid p="xl">
-        {data.queryItem.map((item, index) => (
-          <Grid.Col md={3} xs={12} key={`item-${index}`}>
-            <ProductCard product={item} />
-          </Grid.Col>
-        ))}
+        {!loading && data && data.queryItem ? (
+          <>
+            {data.queryItem.map((item, index) => (
+              <>
+                <Grid.Col md={3} xs={12} key={`item-${index}`}>
+                  <ProductCard product={item} />
+                </Grid.Col>
+              </>
+            ))}
+          </>
+        ) : (
+          <>
+            {[...Array(5)].map((item, index) => (
+              <Grid.Col md={3} xs={12} key={`item-${index}`}>
+                <ProductCard />
+              </Grid.Col>
+            ))}
+          </>
+        )}
       </Grid>
     </>
   )

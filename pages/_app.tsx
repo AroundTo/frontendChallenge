@@ -1,5 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { MantineProvider } from '@mantine/core'
+import { ModalsProvider } from '@mantine/modals'
+import { Notifications } from '@mantine/notifications'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -30,7 +32,10 @@ export default function App(props: AppProps) {
             primaryColor: 'pink',
           }}
         >
-          <Component {...pageProps} />
+          <ModalsProvider>
+            <Notifications />
+            <Component {...pageProps} />
+          </ModalsProvider>
         </MantineProvider>
       </ApolloProvider>
     </>
