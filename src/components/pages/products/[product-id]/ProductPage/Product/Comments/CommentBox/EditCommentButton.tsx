@@ -69,7 +69,11 @@ export const EditCommentButton = ({
   }, [editReviewData, setIsEditing])
 
   return (
-    <Button loading={editReviewLoading} onClick={openConfirmEditCommentModal}>
+    <Button
+      leftIcon={<Edit />}
+      loading={editReviewLoading}
+      onClick={openConfirmEditCommentModal}
+    >
       {'Edit'}
     </Button>
   )

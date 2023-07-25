@@ -9,7 +9,7 @@ export const ProductHeader = ({ name }: { name: string }) => {
     <Flex justify="space-between">
       <Breadcrumbs>
         <Anchor href={APP_URLS.PRODUCTS} component={Link}>
-          {'Products'}
+          {'Items'}
         </Anchor>
         <Anchor href={APP_URLS.PRODUCTS} component={Link}>
           {name}

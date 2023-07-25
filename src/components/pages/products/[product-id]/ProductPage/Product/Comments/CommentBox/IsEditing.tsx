@@ -1,4 +1,4 @@
-import { Button, Card, Group, Textarea } from '@mantine/core'
+import { Button, Group, Textarea } from '@mantine/core'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { EditCommentButton } from './EditCommentButton'
 
@@ -15,7 +15,7 @@ export const IsEditing = ({
   const [commentText, setCommentText] = useState(text)
 
   return (
-    <Card shadow="xs">
+    <>
       <Textarea
         placeholder={text}
         value={commentText}
@@ -31,6 +31,6 @@ export const IsEditing = ({
           commentText={commentText}
         />
       </Group>
-    </Card>
+    </>
   )
 }

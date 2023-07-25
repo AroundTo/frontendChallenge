@@ -12,7 +12,7 @@ export const Desktop = () => {
       </Anchor>
       <Flex w="100%" justify="right">
         <Flex mx={30} align="center">
-          <HeaderLink href={APP_URLS.PRODUCTS}>{'Products'}</HeaderLink>
+          <HeaderLink href={APP_URLS.PRODUCTS}>{'Items'}</HeaderLink>
         </Flex>
         <Button color="dark" radius="xl" sx={{ transition: '1000ms' }}>
           {'Login'}

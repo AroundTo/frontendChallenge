@@ -6,7 +6,7 @@ export const EditProductBreadcrums = ({ productId }: { productId: string }) => {
   return (
     <Breadcrumbs>
       <Anchor href={APP_URLS.PRODUCTS} component={Link}>
-        {'Products'}
+        {'Items'}
       </Anchor>
       <Anchor href={APP_URLS.EDIT_PRODUCT} component={Link}>
         {`Edit ${productId}`}

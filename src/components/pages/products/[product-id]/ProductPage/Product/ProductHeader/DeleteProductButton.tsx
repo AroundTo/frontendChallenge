@@ -33,7 +33,7 @@ export const DeleteProductButton = ({ name }: { name: string }) => {
       children: (
         <Text size="sm">
           {
-            'Are you sure you want to delete this product? This action cannot be undone.'
+            'Are you sure you want to delete this item? This action cannot be undone.'
           }
         </Text>
       ),

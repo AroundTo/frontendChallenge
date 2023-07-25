@@ -9,7 +9,7 @@ export const CreateProductPage = () => {
       <Container mt={20}>
         <CreateProductBreadcrums />
         <Divider my={10} />
-        <Title>{'Create product'}</Title>
+        <Title>{'Create item'}</Title>
         <CreateProductForm />
       </Container>
     </Shell>

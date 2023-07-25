@@ -10,7 +10,7 @@ export const ProductsPage = () => {
     <Shell>
       <Container>
         <Flex justify="space-between" align="center">
-          <Title>{'Products'}</Title>
+          <Title>{'Items'}</Title>
           <Button
             component={Link}
             href={APP_URLS.CREATE_PRODUCT}
@@ -18,7 +18,7 @@ export const ProductsPage = () => {
             radius="xl"
             variant="outline"
           >
-            {'Create new product'}
+            {'Create new item'}
           </Button>
         </Flex>
         <Divider />

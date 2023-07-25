@@ -1,6 +1,6 @@
 export const APP_URLS = {
   INDEX: '/',
-  PRODUCTS: '/products',
-  CREATE_PRODUCT: '/products/create',
-  EDIT_PRODUCT: '/products/edit',
+  PRODUCTS: '/items',
+  CREATE_PRODUCT: '/items/create',
+  EDIT_PRODUCT: '/items/edit',
 }

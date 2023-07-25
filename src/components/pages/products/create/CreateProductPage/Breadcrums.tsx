@@ -6,10 +6,10 @@ export const CreateProductBreadcrums = () => {
   return (
     <Breadcrumbs>
       <Anchor href={APP_URLS.PRODUCTS} component={Link}>
-        {'Products'}
+        {'Items'}
       </Anchor>
       <Anchor href={APP_URLS.CREATE_PRODUCT} component={Link}>
-        {'Create product'}
+        {'Create item'}
       </Anchor>
     </Breadcrumbs>
   )

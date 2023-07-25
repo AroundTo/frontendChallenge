@@ -3,7 +3,7 @@ import { gql, useMutation } from '@apollo/client'
 import { Button, Card, Group, Textarea } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { useEffect, useState } from 'react'
-import { Check } from 'tabler-icons-react'
+import { Check, MessageCircle } from 'tabler-icons-react'
 
 // GraphQL mutation for adding a comment
 const ADD_REVIEW_MUTATION = gql`
@@ -48,7 +48,11 @@ export const AddAComment = ({ productId }: { productId: string }) => {
         onChange={(event) => setCommentText(event.currentTarget.value)}
       />
       <Group position="right" mt="xs">
-        <Button loading={addReviewLoading} onClick={handleComment}>
+        <Button
+          leftIcon={<MessageCircle />}
+          loading={addReviewLoading}
+          onClick={handleComment}
+        >
           {'Comment'}
         </Button>
       </Group>

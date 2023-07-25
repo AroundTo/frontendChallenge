@@ -25,7 +25,7 @@ export const MenuLinks = () => {
         </HeaderLink>
         <Divider />
         <HeaderLink icon={<BuildingStore />} href={APP_URLS.PRODUCTS}>
-          {'Products'}
+          {'Items'}
         </HeaderLink>
       </Modal>
 
