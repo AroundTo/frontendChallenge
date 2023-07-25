@@ -2,9 +2,9 @@ import { APP_URLS } from '@/src/constants/URLS'
 import { ActionIcon, Anchor, Breadcrumbs, Flex } from '@mantine/core'
 import Link from 'next/link'
 import { Edit } from 'tabler-icons-react'
-import { DeleteProductButton } from './DeleteProductButton'
+import { DeleteItemButton } from './DeleteItemButton'
 
-export const ProductHeader = ({ name }: { name: string }) => {
+export const ItemHeader = ({ name }: { name: string }) => {
   return (
     <Flex justify="space-between">
       <Breadcrumbs>
@@ -20,7 +20,7 @@ export const ProductHeader = ({ name }: { name: string }) => {
           <Edit size="1.5rem" />
         </ActionIcon>
         <ActionIcon>
-          <DeleteProductButton name={name} />
+          <DeleteItemButton name={name} />
         </ActionIcon>
       </Flex>
     </Flex>

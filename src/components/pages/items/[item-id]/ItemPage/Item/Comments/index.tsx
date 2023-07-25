@@ -3,7 +3,7 @@ import { Box, Title } from '@mantine/core'
 import { AddAComment } from './AddAComment'
 import { CommentBox } from './CommentBox'
 
-export const ProductComments = ({
+export const ItemComments = ({
   reviews,
   productId,
 }: {

@@ -1,11 +1,11 @@
-import { Product } from './Items'
+import { Item } from './Items'
 
-export type GraphQLProduct = {
-  getItem: Product
+export type GraphQLItem = {
+  getItem: Item
 }
 
-export interface GraphQLProducts {
-  queryItem: Product[]
+export interface GraphQLItems {
+  queryItem: Item[]
 }
 
 export interface GraphQLDeleteReview {

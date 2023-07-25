@@ -1,10 +1,10 @@
-import { GraphQLProducts } from '@/src/types/GraphQL'
+import { GraphQLItems } from '@/src/types/GraphQL'
 import { gql, useQuery } from '@apollo/client'
 import { Grid } from '@mantine/core'
-import { ProductCard } from './Card'
+import { ItemCard } from './Card'
 
-export const ProductsContainer = () => {
-  const { data, loading } = useQuery<GraphQLProducts>(gql`
+export const ItemsContainer = () => {
+  const { data, loading } = useQuery<GraphQLItems>(gql`
     query QueryItem {
       queryItem {
         name
@@ -22,7 +22,7 @@ export const ProductsContainer = () => {
           <>
             {data.queryItem.map((item, index) => (
               <Grid.Col md={3} xs={12} key={`item-${index}`}>
-                <ProductCard product={item} />
+                <ItemCard product={item} />
               </Grid.Col>
             ))}
           </>
@@ -30,7 +30,7 @@ export const ProductsContainer = () => {
           <>
             {[...Array(10)].map((item, index) => (
               <Grid.Col md={3} xs={12} key={`item-${index}`}>
-                <ProductCard />
+                <ItemCard />
               </Grid.Col>
             ))}
           </>

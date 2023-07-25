@@ -3,9 +3,9 @@ import { APP_URLS } from '@/src/constants/URLS'
 import { Button, Container, Divider, Flex, Title } from '@mantine/core'
 import Link from 'next/link'
 import { Plus } from 'tabler-icons-react'
-import { ProductsContainer } from './ProductsContainer'
+import { ItemsContainer } from './ItemsContainer'
 
-export const ProductsPage = () => {
+export const ItemsPage = () => {
   return (
     <Shell title="Items">
       <Container>
@@ -23,7 +23,7 @@ export const ProductsPage = () => {
           </Button>
         </Flex>
         <Divider />
-        <ProductsContainer />
+        <ItemsContainer />
       </Container>
     </Shell>
   )

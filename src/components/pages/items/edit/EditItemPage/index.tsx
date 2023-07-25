@@ -1,5 +1,5 @@
 import { Shell } from '@/src/components/layout/Shell'
-import { GraphQLProduct } from '@/src/types/GraphQL'
+import { GraphQLItem } from '@/src/types/GraphQL'
 import { gql, useQuery } from '@apollo/client'
 import { Container, Divider, Title } from '@mantine/core'
 import { EditItemBreadcrums } from './Breadcrums'
@@ -7,7 +7,7 @@ import { EditItemForm } from './EditItemForm'
 import { LoadingEditItemPage } from './Loading'
 
 export const EditItemPage = ({ productId }: { productId: string }) => {
-  const { data, loading } = useQuery<GraphQLProduct>(gql`
+  const { data, loading } = useQuery<GraphQLItem>(gql`
   query GetItem {
     getItem(name: "${productId}") {
         name

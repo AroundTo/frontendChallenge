@@ -1,9 +1,9 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { Product } from '@/src/types/Items'
+import { Item } from '@/src/types/Items'
 import { Card, Image, Skeleton, Text } from '@mantine/core'
 import Link from 'next/link'
 
-export const ProductCard = ({ product }: { product?: Product }) => {
+export const ItemCard = ({ product }: { product?: Item }) => {
   if (!product)
     return (
       <Card shadow="sm" radius="md" withBorder>

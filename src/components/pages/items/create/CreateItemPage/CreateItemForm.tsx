@@ -100,7 +100,7 @@ export const CreateItemForm = () => {
         <TextInput
           withAsterisk
           label="Name"
-          placeholder="Product Name"
+          placeholder="Item Name"
           {...form.getInputProps('name')}
         />
 
@@ -124,7 +124,7 @@ export const CreateItemForm = () => {
           mt="md"
           withAsterisk
           label="Description"
-          placeholder="Product Description"
+          placeholder="Item Description"
           {...form.getInputProps('description')}
         />
 

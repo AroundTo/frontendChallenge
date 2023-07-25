@@ -17,7 +17,7 @@ const DELETE_ITEM_MUTATION = gql`
   }
 `
 
-export const DeleteProductButton = ({ name }: { name: string }) => {
+export const DeleteItemButton = ({ name }: { name: string }) => {
   const theme = useMantineTheme()
 
   // GraphQL mutation for deleting an item

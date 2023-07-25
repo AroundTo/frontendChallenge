@@ -8,7 +8,7 @@ import {
   Skeleton,
 } from '@mantine/core'
 
-export const LoadingProduct = () => {
+export const LoadingItem = () => {
   return (
     <>
       <Flex direction="column">

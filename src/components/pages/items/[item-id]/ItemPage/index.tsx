@@ -1,12 +1,12 @@
 import { Shell } from '@/src/components/layout/Shell'
-import { GraphQLProduct } from '@/src/types/GraphQL'
+import { GraphQLItem } from '@/src/types/GraphQL'
 import { gql, useSubscription } from '@apollo/client'
 import { Container } from '@mantine/core'
 import { LoadedItem } from './Item'
-import { LoadingProduct } from './Item/Loading'
+import { LoadingItem } from './Item/Loading'
 
 export const ItemPage = ({ itemId }: { itemId: string }) => {
-  const { data, loading } = useSubscription<GraphQLProduct>(gql`
+  const { data, loading } = useSubscription<GraphQLItem>(gql`
     subscription GetItem {
       getItem(name: "${itemId}") {
         name
@@ -38,7 +38,7 @@ export const ItemPage = ({ itemId }: { itemId: string }) => {
             productId={itemId}
           />
         ) : (
-          <LoadingProduct />
+          <LoadingItem />
         )}
       </Container>
     </Shell>

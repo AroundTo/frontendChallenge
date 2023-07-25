@@ -30,11 +30,11 @@ type FormValues = {
   description: string
 }
 
-interface EditProductFormProps {
+interface EditItemFormProps {
   initialValues: FormValues
 }
 
-export const EditItemForm = ({ initialValues }: EditProductFormProps) => {
+export const EditItemForm = ({ initialValues }: EditItemFormProps) => {
   const form = useForm<FormValues>({
     initialValues,
   })
@@ -106,7 +106,7 @@ export const EditItemForm = ({ initialValues }: EditProductFormProps) => {
           mt="md"
           withAsterisk
           label="Description"
-          placeholder="Product Description"
+          placeholder="Item Description"
           {...form.getInputProps('description')}
         />
 

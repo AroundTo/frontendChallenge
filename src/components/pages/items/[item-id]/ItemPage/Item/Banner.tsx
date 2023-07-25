@@ -2,7 +2,7 @@ import { Grid, Image, Text, Title } from '@mantine/core'
 
 type Props = { name: string; description: string; img: string; price: number }
 
-export const ProductBanner = ({ name, description, img, price }: Props) => {
+export const ItemBanner = ({ name, description, img, price }: Props) => {
   return (
     <Grid my={30}>
       <Grid.Col md={5} xs={12}>
