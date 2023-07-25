@@ -52,6 +52,14 @@ export const AboutThisProject = () => {
               }
             </Text>
           </List.Item>
+          <List.Item>
+            <Text>
+              <strong>{'GraphQL Subscriptions'}</strong>
+              {
+                ': The project utilizes GraphQL subscriptions to enable real-time updates for components such as Items and Reviews. When any user makes changes to an Item or leaves a review, all other active sessions on the same page will instantly receive the updated data without requiring a manual refresh. This feature greatly enhances the user experience by keeping the content up-to-date and providing a seamless collaborative experience across multiple users.'
+              }
+            </Text>
+          </List.Item>
         </List>
       </Box>
 
@@ -165,6 +173,14 @@ export const AboutThisProject = () => {
             <Text>
               <strong>{'Loaders skeletons'}</strong>
               {': Skeletons are shown when content is loading.'}
+            </Text>
+          </List.Item>
+          <List.Item>
+            <Text>
+              <strong>{'Loaders in Buttons'}</strong>
+              {
+                ': When a backend action is invoked, such as saving or submitting data, the corresponding button will display a loader to indicate that it is waiting for a response. '
+              }
             </Text>
           </List.Item>
           <List.Item>
