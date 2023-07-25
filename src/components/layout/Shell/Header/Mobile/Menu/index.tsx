@@ -2,7 +2,7 @@ import { Burger, Divider, Modal, useMantineTheme } from '@mantine/core'
 
 import { APP_URLS } from '@/src/constants/URLS'
 import { useState } from 'react'
-import { BuildingStore, Home } from 'tabler-icons-react'
+import { BuildingStore, Home, MessageCircle } from 'tabler-icons-react'
 import { HeaderLink } from './Item'
 
 export const MenuLinks = () => {
@@ -26,6 +26,9 @@ export const MenuLinks = () => {
         <Divider />
         <HeaderLink icon={<BuildingStore />} href={APP_URLS.PRODUCTS}>
           {'Items'}
+        </HeaderLink>
+        <HeaderLink icon={<MessageCircle />} href={APP_URLS.ALL_REVIEWS}>
+          {'Reviews'}
         </HeaderLink>
       </Modal>
 

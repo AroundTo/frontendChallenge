@@ -8,6 +8,23 @@ export interface GraphQLItems {
   queryItem: Item[]
 }
 
+export interface GraphQLReviews {
+  queryReview: {
+    id: string
+    text: string
+    item: GraphQLReviewsItem
+    __typename: string
+  }[]
+}
+
+export interface GraphQLReviewsItem {
+  name: string
+  img: string
+  price: number
+  description: string
+  __typename: string
+}
+
 export interface GraphQLDeleteReview {
   deleteReview: DeleteReview
 }

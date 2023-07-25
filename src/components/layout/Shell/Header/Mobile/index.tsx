@@ -1,9 +1,8 @@
-import { Anchor, Center, Flex } from '@mantine/core'
+import { Anchor, Avatar, Center, Flex } from '@mantine/core'
 
 import { AppIcon } from '@/src/components/svgs/AppIcon'
 import { APP_URLS } from '@/src/constants/URLS'
 import Link from 'next/link'
-import { AuthAvatarMobile } from './AuthAvatar'
 import { MenuLinks } from './Menu'
 
 export const Mobile = () => {
@@ -17,7 +16,7 @@ export const Mobile = () => {
         </Anchor>
       </Center>
 
-      <AuthAvatarMobile />
+      <Avatar sx={{ transition: '1000ms' }} size={25} radius="xl" m={0} />
     </Flex>
   )
 }
