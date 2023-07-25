@@ -1,3 +1,4 @@
+import { GraphQLUpdateReview } from '@/src/types/Products'
 import { gql, useMutation } from '@apollo/client'
 import { Button, Card, Group, Text, Textarea } from '@mantine/core'
 import { modals } from '@mantine/modals'
@@ -29,7 +30,7 @@ export const IsEditing = ({
 
   // GraphQL mutation for editing a review
   const [editReview, { data: editReviewData, loading: editReviewLoading }] =
-    useMutation(EDIT_REVIEW_MUTATION)
+    useMutation<GraphQLUpdateReview>(EDIT_REVIEW_MUTATION)
 
   // Function to open the confirm edit modal
   const openConfirmEditModal = () =>

@@ -25,3 +25,17 @@ export interface GraphQLAddReview {
 export interface AddReview {
   numUids: number
 }
+export interface GraphQLUpdateReview {
+  updateReview: AddReview
+}
+
+export interface AddReview {
+  numUids: number
+}
+export interface GraphQLAddItem {
+  addItem: AddReview
+}
+
+export interface AddReview {
+  numUids: number
+}

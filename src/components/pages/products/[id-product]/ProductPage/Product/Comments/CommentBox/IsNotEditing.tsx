@@ -1,3 +1,4 @@
+import { GraphQLDeleteReview } from '@/src/types/Products'
 import { gql, useMutation } from '@apollo/client'
 import { ActionIcon, Flex, Text, useMantineTheme } from '@mantine/core'
 import { modals } from '@mantine/modals'
@@ -31,7 +32,7 @@ export const IsNotEditing = ({
   const [
     deleteReview,
     { data: deleteReviewData, loading: deleteReviewIsLoading },
-  ] = useMutation(DELETE_REVIEW_MUTATION)
+  ] = useMutation<GraphQLDeleteReview>(DELETE_REVIEW_MUTATION)
 
   // Function to open the confirm delete modal
   const openConfirmDeleteModal = () =>
