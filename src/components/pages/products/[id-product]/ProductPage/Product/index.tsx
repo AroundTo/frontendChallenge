@@ -1,8 +1,8 @@
 import { Review } from '@/src/types/GraphQL'
 import { Divider } from '@mantine/core'
 import { ProductBanner } from './Banner'
-import { ProductBreadcrums } from './Breadcrums'
 import { ProductComments } from './Comments'
+import { ProductHeader } from './ProductHeader'
 
 export interface Props {
   name: string
@@ -23,7 +23,7 @@ export const LoadedProduct = ({
 }: Props) => {
   return (
     <>
-      <ProductBreadcrums name={name} />
+      <ProductHeader name={name} />
       <Divider my={10} />
       <ProductBanner
         name={name}
