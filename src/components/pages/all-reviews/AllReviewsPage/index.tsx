@@ -6,7 +6,7 @@ export const AllReviewsPage = () => {
   return (
     <Shell title="Reviews">
       <Container>
-        <Title>{'All reviews'}</Title>
+        <Title>{'Reviews'}</Title>
         <Divider />
         <ReviewsContainer />
       </Container>

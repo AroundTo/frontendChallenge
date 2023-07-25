@@ -21,7 +21,7 @@ export const ReviewsContainer = () => {
     <>
       {!loading && data && data.queryReview ? (
         <>
-          {data.queryReview.map((review, index) => (
+          {[...data.queryReview].reverse().map((review) => (
             <div key={`review-${review.id}`}>
               {review && review.item && (
                 <ReviewCard
