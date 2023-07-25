@@ -13,7 +13,7 @@ export const Mobile = () => {
 
       <Center w="100%">
         <Anchor href={APP_URLS.INDEX} component={Link}>
-          <AppIcon svgProps={{ height: 30 }} color="#212121" />
+          <AppIcon svgProps={{ height: 25 }} color="#212121" />
         </Anchor>
       </Center>
 

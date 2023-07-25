@@ -33,7 +33,7 @@ export const Footer = () => {
             target="_blank"
           >
             <Flex direction="column" gap={4}>
-              <AppIcon color={theme.colors.gray[6]} svgProps={{ height: 30 }} />
+              <AppIcon color={theme.colors.gray[6]} svgProps={{ height: 25 }} />
               <Text>{'Around Front End Challenge'}</Text>
             </Flex>
           </Anchor>

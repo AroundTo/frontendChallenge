@@ -19,9 +19,7 @@ export const ItemHeader = ({ name }: { name: string }) => {
         <ActionIcon href={`${APP_URLS.EDIT_PRODUCT}/${name}`} component={Link}>
           <Edit size="1.5rem" />
         </ActionIcon>
-        <ActionIcon>
-          <DeleteItemButton name={name} />
-        </ActionIcon>
+        <DeleteItemButton name={name} />
       </Flex>
     </Flex>
   )

@@ -18,11 +18,6 @@ export const EditItemPage = ({ itemId }: { itemId: string }) => {
             id
             text
         }
-        reviewsAggregate {
-            count
-            textMin
-            textMax
-        }
     }
 }
   `)
@@ -39,7 +34,7 @@ export const EditItemPage = ({ itemId }: { itemId: string }) => {
               initialValues={{
                 name: data.getItem.name,
                 img: data.getItem.img,
-                price: data.getItem.price,
+                price: data.getItem.price.toString(),
                 description: data.getItem.description,
               }}
             />

@@ -1,11 +1,11 @@
 import { GraphQLItems } from '@/src/types/GraphQL'
-import { gql, useQuery } from '@apollo/client'
+import { gql, useSubscription } from '@apollo/client'
 import { Grid } from '@mantine/core'
 import { ItemCard } from './Card'
 
 export const ItemsContainer = () => {
-  const { data, loading } = useQuery<GraphQLItems>(gql`
-    query QueryItem {
+  const { data, loading } = useSubscription<GraphQLItems>(gql`
+    subscription QueryItem {
       queryItem {
         name
         img
@@ -14,7 +14,6 @@ export const ItemsContainer = () => {
       }
     }
   `)
-
   return (
     <>
       <Grid p="xl" my={30}>

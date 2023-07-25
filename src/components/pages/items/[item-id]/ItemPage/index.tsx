@@ -17,11 +17,6 @@ export const ItemPage = ({ itemId }: { itemId: string }) => {
           id
           text
         }
-        reviewsAggregate {
-          count
-          textMin
-          textMax
-        }
       }
     }  `)
 
