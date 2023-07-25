@@ -1,4 +1,4 @@
-import { ProductPage } from '@/src/components/pages/products/[id-product]/ProductPage'
+import { ProductPage } from '@/src/components/pages/products/[product-id]/ProductPage'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 

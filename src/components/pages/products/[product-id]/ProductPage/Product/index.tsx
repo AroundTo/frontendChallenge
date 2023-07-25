@@ -1,7 +1,7 @@
 import { Review } from '@/src/types/GraphQL'
 import { Divider } from '@mantine/core'
-import { ProductBanner } from './Banner'
 import { ProductComments } from './Comments'
+import { ProductBanner } from './ProductBanner'
 import { ProductHeader } from './ProductHeader'
 
 export interface Props {

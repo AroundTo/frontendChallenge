@@ -20,7 +20,7 @@ export const ProductHeader = ({ name }: { name: string }) => {
           <Edit size="1.5rem" />
         </ActionIcon>
         <ActionIcon>
-          <DeleteProductButton />
+          <DeleteProductButton name={name} />
         </ActionIcon>
       </Flex>
     </Flex>

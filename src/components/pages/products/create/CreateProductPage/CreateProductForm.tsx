@@ -87,6 +87,7 @@ export const CreateProductForm = () => {
         message: 'Failed to add the item.',
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addItemData])
 
   return (

@@ -18,24 +18,22 @@ export interface DeleteReview {
   __typename: string
 }
 
+export interface GraphQLResponse {
+  numUids: number
+}
+
 export interface GraphQLAddReview {
-  addReview: AddReview
+  addReview: GraphQLResponse
 }
 
-export interface AddReview {
-  numUids: number
-}
 export interface GraphQLUpdateReview {
-  updateReview: AddReview
+  updateReview: GraphQLResponse
 }
 
-export interface AddReview {
-  numUids: number
-}
 export interface GraphQLAddItem {
-  addItem: AddReview
+  addItem: GraphQLResponse
 }
 
-export interface AddReview {
-  numUids: number
+export interface GraphQLDeleteItem {
+  deleteItem: { msg: string; numUids: number }
 }
