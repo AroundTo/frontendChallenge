@@ -1,22 +1,21 @@
-import { Anchor, Avatar, Grid, Text, Title } from '@mantine/core'
+import { Anchor, Grid, Image, Text, Title } from '@mantine/core'
 import Link from 'next/link'
 
 export const AboutMe = () => {
   return (
-    <Grid gutter="xl">
-      <Grid.Col md={6}>
-        <Avatar
-          size={400}
+    <Grid gutter="xl" justify="center" align="center">
+      <Grid.Col md={6} p={30}>
+        <Image
+          width="100%"
           radius="md"
           src="profilePhoto.jpeg"
           alt="Profile photo"
         />
       </Grid.Col>
       <Grid.Col md={6}>
-        <Title mt="xl" order={3}>
-          {'Hello! My name is'}
-        </Title>
+        <Text size="1.5rem">{'Hello! My name is'}</Text>
         <Title
+          mt={-5}
           size="3rem"
           variant="gradient"
           gradient={{ from: 'pink.4', to: 'pink.9', deg: 45 }}

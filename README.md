@@ -1,38 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Around Front End Challenge 💻 🎟️
 
-## Getting Started
+---
 
-First, run the development server:
+<p align="center">
+<img width="368" alt="image" src="https://github.com/AroundTo/frontendChallenge/assets/8725846/46edfec9-b70e-4bcf-a5a8-559b4c8d8f1b">
+</p>
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Welcome to the Around Front End Challenge! This challenge is designed to assess your front-end development skills using React, Typescript and multiple technologies. Please read the following instructions and guidelines before starting the challenge.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+NOTE: if any of the following topics is not clear, please feel free to ask us any question, or make any assumption that you consider necessary to complete the challenge.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Instructions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Fork this repo.
+2. Modify the code to complete the challenge.
+3. Create a pull request to submit your solution.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Challenge
 
-## Learn More
+1. Create a route to visualize all products with their reviews and be able to add one more.
+2. Create a route to visualize all reviews with their products and be able to add one more.
+any propusal in terms of design and UX will be welcome.
+<p align="center">
+<img width="355" alt="image" src="https://github.com/AroundTo/frontendChallenge/assets/8725846/0e47dbeb-5d92-4949-9e28-c39aff940c78">
+<img width="230" alt="image" src="https://github.com/AroundTo/frontendChallenge/assets/8725846/0d880c34-ed9d-420d-8e79-a4edaeaa6822">
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+**That's it!** You can use any additional libraries or frameworks you want, but make sure to follow the guidelines below.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Things to evaluate from high to low priority
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+While evaluating your submission, we will consider the following aspects:
 
-## Deploy on Vercel
+1. Usage of `Typescript`
+2. Usage of `eslint.js` , `prettier.js` and `tsconfig.json` attached to the project
+3. Be able to use `GraphQL`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+schema and graphQL endpoint:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`https://blue-surf-1040009.us-east-1.aws.cloud.dgraph.io/graphql`
+
+wss endpoint:
+
+`wss://blue-surf-1040009.us-east-1.aws.cloud.dgraph.io/graphql`
+
+4. Usage of `subscriptions` to update the UI in real time from any other client
+5. Design and UX proposal
+
+## Extra Topics to Evaluate
+
+1. **Code structure and organization:** Is the code logically structured, modular, and easy to understand?
+2. **Filtering:** Any proposal to filter the data from UI or graphql query
+3. **Tech stach:** Do you suggest any tecnology or library to improve the project?
+4. **Typing GraphQL** Do you suggest any way to type the graphql schema?
+5. **Rules** Do you consider that the previous rules are not enough or should be different?, be free to propose any change to the rules in your PR
+6. **Responsive design:** Does the application provide a flawless user experience across different devices and screen sizes?
+7. **Documentation:** We love self explanatory code, but we also like any kind of documentation that you consider necessary to understand your code
+8. **Extra features:** Any extra feature that you consider that could be useful for the project
+
+Feel free to reach out if you have any questions or need further clarification. Good luck, and happy coding! 🚀
