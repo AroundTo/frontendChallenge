@@ -8,7 +8,7 @@ export const Desktop = () => {
   return (
     <Flex align="center">
       <Anchor href={APP_URLS.INDEX} component={Link}>
-        <AppIcon svgProps={{ height: 50 }} />
+        <AppIcon color="#212121" svgProps={{ height: 50 }} />
       </Anchor>
       <Flex w="100%" justify="right">
         <Flex mx={30} align="center">

@@ -28,7 +28,7 @@ export const ProductsContainer = () => {
           </>
         ) : (
           <>
-            {[...Array(5)].map((item, index) => (
+            {[...Array(10)].map((item, index) => (
               <Grid.Col md={3} xs={12} key={`item-${index}`}>
                 <ProductCard />
               </Grid.Col>

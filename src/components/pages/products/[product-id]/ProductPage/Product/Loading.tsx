@@ -14,8 +14,8 @@ export const LoadingProduct = () => {
       <Flex direction="column">
         <Flex justify="space-between">
           <Breadcrumbs>
-            <Skeleton height="1.5rem" width={150} />
-            <Skeleton height="1.5rem" width={150} />
+            <Skeleton height="1.5rem" width={100} />
+            <Skeleton height="1.5rem" width={100} />
           </Breadcrumbs>
           <Flex justify="end" gap={4}>
             <Skeleton width="1.5rem" height="1.5rem" />

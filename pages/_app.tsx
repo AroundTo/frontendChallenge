@@ -1,4 +1,5 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { getClient } from '@/src/config/getGraphQLClient'
+import { ApolloProvider } from '@apollo/client'
 import { MantineProvider } from '@mantine/core'
 import { ModalsProvider } from '@mantine/modals'
 import { Notifications } from '@mantine/notifications'
@@ -7,12 +8,6 @@ import Head from 'next/head'
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props
-
-  const client = new ApolloClient({
-    uri: 'https://blue-surf-1040009.us-east-1.aws.cloud.dgraph.io/graphql',
-    cache: new InMemoryCache(),
-  })
-
   return (
     <>
       <Head>
@@ -23,7 +18,7 @@ export default function App(props: AppProps) {
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
-      <ApolloProvider client={client}>
+      <ApolloProvider client={getClient()}>
         <MantineProvider
           withGlobalStyles
           withNormalizeCSS

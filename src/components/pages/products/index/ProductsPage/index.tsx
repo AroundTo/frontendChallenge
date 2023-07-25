@@ -17,6 +17,7 @@ export const ProductsPage = () => {
             leftIcon={<Plus />}
             radius="xl"
             variant="outline"
+            size="xs"
           >
             {'Create new item'}
           </Button>
