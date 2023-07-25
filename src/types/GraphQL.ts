@@ -1,27 +1,14 @@
-export type Product = {
-  __typename: string
-  name: string
-  img: string
-  price: number
-  description: string
-  reviews: Review[]
-  reviewsAggregate: ReviewsAggregate
+import { Product } from './Items'
+
+export type GraphQLProduct = {
+  getItem: Product
 }
 
-export interface Review {
-  __typename: string
-  id: string
-  text: string
+export interface GraphQLProducts {
+  queryItem: Product[]
 }
 
-export interface ReviewsAggregate {
-  __typename: string
-  count: number
-  textMin: string
-  textMax: string
-}
-
-export interface Delete {
+export interface GraphQLDeleteReview {
   deleteReview: DeleteReview
 }
 
@@ -29,4 +16,28 @@ export interface DeleteReview {
   msg: string
   numUids: number
   __typename: string
+}
+
+export interface GraphQLResponse {
+  numUids: number
+}
+
+export interface GraphQLAddReview {
+  addReview: GraphQLResponse
+}
+
+export interface GraphQLUpdateReview {
+  updateReview: GraphQLResponse
+}
+
+export interface GraphQLAddItem {
+  addItem: GraphQLResponse
+}
+
+export interface GraphQLEditItem {
+  updateItem: GraphQLResponse
+}
+
+export interface GraphQLDeleteItem {
+  deleteItem: { msg: string; numUids: number }
 }

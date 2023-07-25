@@ -1,4 +1,4 @@
-import { GraphQLProducts } from '@/src/types/Products'
+import { GraphQLProducts } from '@/src/types/GraphQL'
 import { gql, useQuery } from '@apollo/client'
 import { Grid } from '@mantine/core'
 import { ProductCard } from './Card'

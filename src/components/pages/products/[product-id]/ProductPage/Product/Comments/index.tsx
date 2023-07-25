@@ -1,4 +1,4 @@
-import { Review } from '@/src/types/GraphQL'
+import { Review } from '@/src/types/Items'
 import { Box, Title } from '@mantine/core'
 import { AddAComment } from './AddAComment'
 import { CommentBox } from './CommentBox'

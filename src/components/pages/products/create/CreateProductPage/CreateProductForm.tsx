@@ -1,5 +1,5 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { GraphQLAddItem } from '@/src/types/Products'
+import { GraphQLAddItem } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import {
   Box,

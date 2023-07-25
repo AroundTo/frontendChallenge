@@ -1,4 +1,4 @@
-import { GraphQLUpdateReview } from '@/src/types/Products'
+import { GraphQLUpdateReview } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import { Button, Text } from '@mantine/core'
 import { modals } from '@mantine/modals'

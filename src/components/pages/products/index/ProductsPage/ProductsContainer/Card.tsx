@@ -1,5 +1,5 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { Product } from '@/src/types/GraphQL'
+import { Product } from '@/src/types/Items'
 import { Card, Image, Skeleton, Text } from '@mantine/core'
 import Link from 'next/link'
 

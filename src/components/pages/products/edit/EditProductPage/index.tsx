@@ -1,5 +1,5 @@
 import { Shell } from '@/src/components/layout/Shell'
-import { GraphQLProduct } from '@/src/types/Products'
+import { GraphQLProduct } from '@/src/types/GraphQL'
 import { gql, useQuery } from '@apollo/client'
 import { Container, Divider, Loader, Title } from '@mantine/core'
 import { EditProductBreadcrums } from './Breadcrums'

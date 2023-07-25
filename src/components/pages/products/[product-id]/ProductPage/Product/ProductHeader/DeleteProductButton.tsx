@@ -1,5 +1,5 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { GraphQLDeleteItem } from '@/src/types/Products'
+import { GraphQLDeleteItem } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import { ActionIcon, Loader, Text, useMantineTheme } from '@mantine/core'
 import { modals } from '@mantine/modals'

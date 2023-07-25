@@ -1,4 +1,4 @@
-import { GraphQLAddReview } from '@/src/types/Products'
+import { GraphQLAddReview } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import { Button, Card, Group, Textarea } from '@mantine/core'
 import { notifications } from '@mantine/notifications'

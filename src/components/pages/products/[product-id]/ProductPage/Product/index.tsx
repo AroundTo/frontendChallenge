@@ -1,4 +1,4 @@
-import { Review } from '@/src/types/GraphQL'
+import { Review } from '@/src/types/Items'
 import { Divider } from '@mantine/core'
 import { ProductComments } from './Comments'
 import { ProductBanner } from './ProductBanner'

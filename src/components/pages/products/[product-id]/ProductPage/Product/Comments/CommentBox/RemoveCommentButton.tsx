@@ -1,4 +1,4 @@
-import { GraphQLDeleteReview } from '@/src/types/Products'
+import { GraphQLDeleteReview } from '@/src/types/GraphQL'
 import { gql, useMutation } from '@apollo/client'
 import { ActionIcon, Loader, Text, useMantineTheme } from '@mantine/core'
 import { modals } from '@mantine/modals'
