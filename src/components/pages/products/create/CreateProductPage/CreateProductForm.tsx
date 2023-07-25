@@ -13,6 +13,7 @@ import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import { Plus } from 'tabler-icons-react'
 
 const ADD_ITEM_MUTATION = gql`
   mutation AddItem(
@@ -123,8 +124,8 @@ export const CreateProductForm = () => {
         />
 
         <Group position="right" mt="md">
-          <Button type="submit" loading={loading}>
-            {'Submit'}
+          <Button leftIcon={<Plus />} type="submit" loading={loading}>
+            {'Create product'}
           </Button>
         </Group>
       </form>

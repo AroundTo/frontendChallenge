@@ -1,16 +1,6 @@
-import { gql } from '@apollo/client'
 import { Button, Card, Group, Textarea } from '@mantine/core'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { EditCommentButton } from './EditCommentButton'
-
-// GraphQL mutation for editing a review
-const EDIT_REVIEW_MUTATION = gql`
-  mutation EditReview($id: ID!, $text: String!) {
-    updateReview(input: { filter: { id: [$id] }, set: { text: $text } }) {
-      numUids
-    }
-  }
-`
 
 // Component definition for editing a comment
 export const IsEditing = ({

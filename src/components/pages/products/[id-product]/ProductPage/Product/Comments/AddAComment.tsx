@@ -48,7 +48,9 @@ export const AddAComment = ({ productId }: { productId: string }) => {
         onChange={(event) => setCommentText(event.currentTarget.value)}
       />
       <Group position="right" mt="xs">
-        <Button onClick={handleComment}>{'Comment'}</Button>
+        <Button loading={addReviewLoading} onClick={handleComment}>
+          {'Comment'}
+        </Button>
       </Group>
     </Card>
   )
