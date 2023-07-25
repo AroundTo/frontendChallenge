@@ -1,33 +1,32 @@
 import { Shell } from '@/src/components/layout/Shell'
 import { GraphQLProduct } from '@/src/types/GraphQL'
-import { gql, useQuery } from '@apollo/client'
+import { gql, useSubscription } from '@apollo/client'
 import { Container } from '@mantine/core'
 import { LoadedProduct } from './Product'
 import { LoadingProduct } from './Product/Loading'
 
 export const ProductPage = ({ productId }: { productId: string }) => {
-  const { data, loading } = useQuery<GraphQLProduct>(gql`
-  query GetItem {
-    getItem(name: "${productId}") {
+  const { data, loading } = useSubscription<GraphQLProduct>(gql`
+    subscription GetItem {
+      getItem(name: "${productId}") {
         name
         img
         price
         description
         reviews {
-            id
-            text
+          id
+          text
         }
         reviewsAggregate {
-            count
-            textMin
-            textMax
+          count
+          textMin
+          textMax
         }
-    }
-}
-  `)
+      }
+    }  `)
 
   return (
-    <Shell>
+    <Shell title={data?.getItem.name || ''}>
       <Container mt={20} mb={50}>
         {!loading && data && data.getItem ? (
           <LoadedProduct

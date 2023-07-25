@@ -46,7 +46,7 @@ export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
   const handleSubmit = (values: FormValues) => {
     updateItem({
       variables: {
-        filter: { name: { eq: values.name } },
+        filter: { name: { eq: initialValues.name } },
         set: {
           img: values.img,
           price: values.price,
@@ -54,7 +54,11 @@ export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
         },
       },
     }).catch((error) => {
-      console.error('Error updating item:', error.message)
+      notifications.show({
+        color: 'red',
+        title: 'Update Item Failed',
+        message: error.message,
+      })
     })
   }
 
@@ -67,7 +71,7 @@ export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
         title: 'Update Successful',
         message: 'Your item has been successfully updated.',
       })
-      router.push(`${APP_URLS.PRODUCTS}/${form.values.name}`)
+      router.push(`${APP_URLS.PRODUCTS}/${initialValues.name}`)
     } else if (updateItemData && updateItemData.updateItem.numUids === 0) {
       // If numUids is 0, show update failed notification
       notifications.show({
@@ -82,13 +86,6 @@ export const EditProductForm = ({ initialValues }: EditProductFormProps) => {
   return (
     <Box m="xl">
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <TextInput
-          withAsterisk
-          label="Name"
-          placeholder="Product Name"
-          {...form.getInputProps('name')}
-        />
-
         <TextInput
           mt="md"
           withAsterisk

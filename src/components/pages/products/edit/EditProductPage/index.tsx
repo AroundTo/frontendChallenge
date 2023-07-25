@@ -27,7 +27,7 @@ export const EditProductPage = ({ productId }: { productId: string }) => {
   `)
 
   return (
-    <Shell>
+    <Shell title="Edit item">
       <Container mt={20}>
         <EditProductBreadcrums productId={data?.getItem.name || 'item'} />
         <Divider my={10} />

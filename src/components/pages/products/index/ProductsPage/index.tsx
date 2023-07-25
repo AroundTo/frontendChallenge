@@ -7,7 +7,7 @@ import { ProductsContainer } from './ProductsContainer'
 
 export const ProductsPage = () => {
   return (
-    <Shell>
+    <Shell title="Items">
       <Container>
         <Flex justify="space-between" align="center">
           <Title>{'Items'}</Title>

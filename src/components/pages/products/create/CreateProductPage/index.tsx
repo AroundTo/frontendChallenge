@@ -5,7 +5,7 @@ import { CreateProductForm } from './CreateProductForm'
 
 export const CreateProductPage = () => {
   return (
-    <Shell>
+    <Shell title="Create item">
       <Container mt={20}>
         <CreateProductBreadcrums />
         <Divider my={10} />
