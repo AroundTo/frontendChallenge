@@ -60,7 +60,7 @@ export const EditItemForm = ({ initialValues }: EditItemFormProps) => {
         filter: { name: { eq: initialValues.name } },
         set: {
           img: values.img,
-          price: values.price,
+          price: parseFloat(values.price),
           description: values.description,
         },
       },
@@ -111,6 +111,7 @@ export const EditItemForm = ({ initialValues }: EditItemFormProps) => {
           label="Price"
           placeholder="Enter the price"
           {...form.getInputProps('price')}
+          value={parseFloat(form.values.price)} // Convert "price" to a number
         />
 
         <Textarea
@@ -123,7 +124,7 @@ export const EditItemForm = ({ initialValues }: EditItemFormProps) => {
 
         <Group position="right" mt="md">
           <Button leftIcon={<Edit />} type="submit" loading={loading}>
-            {'Edit'}
+            {'Save'}
           </Button>
         </Group>
       </form>

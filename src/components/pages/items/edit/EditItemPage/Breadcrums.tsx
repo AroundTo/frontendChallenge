@@ -8,8 +8,11 @@ export const EditItemBreadcrums = ({ itemId }: { itemId: string }) => {
       <Anchor href={APP_URLS.PRODUCTS} component={Link}>
         {'Items'}
       </Anchor>
+      <Anchor href={`${APP_URLS.PRODUCTS}/${itemId}`} component={Link}>
+        {itemId}
+      </Anchor>
       <Anchor href={APP_URLS.EDIT_PRODUCT} component={Link}>
-        {`Edit ${itemId}`}
+        {`Edit`}
       </Anchor>
     </Breadcrumbs>
   )

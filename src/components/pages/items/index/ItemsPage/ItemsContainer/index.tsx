@@ -11,6 +11,10 @@ export const ItemsContainer = () => {
         img
         price
         description
+        reviews {
+          id
+          text
+        }
       }
     }
   `)

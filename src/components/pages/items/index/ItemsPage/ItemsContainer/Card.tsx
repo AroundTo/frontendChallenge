@@ -37,6 +37,9 @@ export const ItemCard = ({ item }: { item?: Item }) => {
       <Text lineClamp={1} color="dimmed" size="sm">
         {item.name}
       </Text>
+      <Text lineClamp={1} color="dimmed" size="xs">
+        {`${item.reviews.length} reviews`}
+      </Text>
     </Card>
   )
 }

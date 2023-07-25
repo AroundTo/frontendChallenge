@@ -1,13 +1,52 @@
-import { getClient } from '@/src/config/getGraphQLClient'
-import { ApolloProvider } from '@apollo/client'
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+  split,
+} from '@apollo/client'
+import { WebSocketLink } from '@apollo/client/link/ws'
+import { getMainDefinition } from '@apollo/client/utilities'
 import { MantineProvider } from '@mantine/core'
 import { ModalsProvider } from '@mantine/modals'
 import { Notifications } from '@mantine/notifications'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { SubscriptionClient } from 'subscriptions-transport-ws'
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props
+
+  const httpLink = createHttpLink({
+    uri: process.env.NEXT_PUBLIC_REACT_APP_GRAPHQL_API_HTTPS || '',
+  })
+  const wsLink = new WebSocketLink(
+    new SubscriptionClient(
+      process.env.NEXT_PUBLIC_REACT_APP_GRAPHQL_API_WSS || '',
+      {
+        reconnect: true,
+        timeout: 3000,
+      }
+    )
+  )
+
+  const splitLink = split(
+    ({ query }) => {
+      const definition = getMainDefinition(query)
+      return (
+        definition.kind === 'OperationDefinition' &&
+        definition.operation === 'subscription'
+      )
+    },
+    wsLink,
+    httpLink
+  )
+
+  const apolloClient = new ApolloClient({
+    link: splitLink,
+    cache: new InMemoryCache(),
+  })
+
   return (
     <>
       <Head>
@@ -18,7 +57,7 @@ export default function App(props: AppProps) {
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
-      <ApolloProvider client={getClient()}>
+      <ApolloProvider client={apolloClient}>
         <MantineProvider
           withGlobalStyles
           withNormalizeCSS

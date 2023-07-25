@@ -38,7 +38,7 @@ export const EditReviewButton = ({
           }
         </Text>
       ),
-      labels: { confirm: 'Edit', cancel: 'Cancel' },
+      labels: { confirm: 'Confirm', cancel: 'Cancel' },
       onCancel: () => console.log('Cancel'),
       onConfirm: async () => {
         editReview({ variables: { id, text: reviewText } })
@@ -74,7 +74,7 @@ export const EditReviewButton = ({
       loading={editReviewLoading}
       onClick={openConfirmEditReviewModal}
     >
-      {'Edit'}
+      {'Confirm'}
     </Button>
   )
 }
