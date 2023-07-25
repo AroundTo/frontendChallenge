@@ -50,6 +50,16 @@ export const CreateItemForm = () => {
       price: '',
       description: '',
     },
+    validate: (values) => {
+      const errors: Partial<FormValues> = {}
+      if (!values.name) errors.name = 'Name is required'
+      if (!values.img) errors.img = 'Image URL is required'
+      else if (!/^https?:\/\/\S+\.(jpg|jpeg|png|gif)$/i.test(values.img))
+        errors.img = 'Invalid image URL format'
+      if (!values.price) errors.price = 'Price is required'
+      if (!values.description) errors.description = 'Description is required'
+      return errors
+    },
   })
 
   const [addItem, { data: addItemData, loading }] =

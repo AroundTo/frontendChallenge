@@ -26,7 +26,7 @@ const UPDATE_ITEM_MUTATION = gql`
 type FormValues = {
   name: string
   img: string
-  price: number
+  price: string
   description: string
 }
 
@@ -37,6 +37,17 @@ interface EditItemFormProps {
 export const EditItemForm = ({ initialValues }: EditItemFormProps) => {
   const form = useForm<FormValues>({
     initialValues,
+    validate: (values) => {
+      const errors: Partial<FormValues> = {}
+      if (!values.name) errors.name = 'Name is required'
+      if (!values.img) errors.img = 'Image URL is required'
+      else if (!/^https?:\/\/\S+\.(jpg|jpeg|png|gif)$/i.test(values.img))
+        errors.img = 'Invalid image URL format'
+
+      if (!values.price) errors.price = 'Price is required'
+      if (!values.description) errors.description = 'Description is required'
+      return errors
+    },
   })
 
   const [updateItem, { data: updateItemData, loading }] =
