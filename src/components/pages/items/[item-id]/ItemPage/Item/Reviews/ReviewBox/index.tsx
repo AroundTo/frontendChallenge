@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { IsEditing } from './IsEditing'
 import { IsNotEditing } from './IsNotEditing'
 
-export const CommentBox = ({
+export const ReviewBox = ({
   text,
   index,
   id,
@@ -15,7 +15,7 @@ export const CommentBox = ({
   const [isEditing, setIsEditing] = useState(false)
 
   return (
-    <Card my="xl" key={`comment-${index}`} shadow="xs">
+    <Card my="xl" key={`review-${index}`} shadow="xs">
       {isEditing ? (
         <IsEditing id={id} text={text} setIsEditing={setIsEditing} />
       ) : (

@@ -16,7 +16,7 @@ const DELETE_REVIEW_MUTATION = gql`
   }
 `
 
-export const RemoveCommentButton = ({ id }: { id: string }) => {
+export const RemoveReviewButton = ({ id }: { id: string }) => {
   const theme = useMantineTheme()
 
   // GraphQL mutation for deleting a review
@@ -26,13 +26,13 @@ export const RemoveCommentButton = ({ id }: { id: string }) => {
   ] = useMutation<GraphQLDeleteReview>(DELETE_REVIEW_MUTATION)
 
   // Function to open the confirm delete modal
-  const openConfirmDeleteCommentModal = () =>
+  const openConfirmDeleteReviewModal = () =>
     modals.openConfirmModal({
       title: 'Confirm Delete',
       children: (
         <Text size="sm">
           {
-            'Are you sure you want to delete this comment? This action cannot be undone.'
+            'Are you sure you want to delete this review? This action cannot be undone.'
           }
         </Text>
       ),
@@ -64,7 +64,7 @@ export const RemoveCommentButton = ({ id }: { id: string }) => {
   }, [deleteReviewData])
 
   return (
-    <ActionIcon onClick={() => openConfirmDeleteCommentModal()}>
+    <ActionIcon onClick={() => openConfirmDeleteReviewModal()}>
       {deleteReviewIsLoading ? (
         <Loader size="1.125rem" />
       ) : (

@@ -1,7 +1,7 @@
 import { ActionIcon, Flex, Text } from '@mantine/core'
 import { Dispatch, SetStateAction } from 'react'
 import { Edit } from 'tabler-icons-react'
-import { RemoveCommentButton } from './RemoveCommentButton'
+import { RemoveReviewButton } from './RemoveReviewButton'
 
 export const IsNotEditing = ({
   text,
@@ -19,7 +19,7 @@ export const IsNotEditing = ({
         <ActionIcon onClick={() => setIsEditing(true)}>
           <Edit size="1.125rem" />
         </ActionIcon>
-        <RemoveCommentButton id={id} />
+        <RemoveReviewButton id={id} />
       </Flex>
     </Flex>
   )

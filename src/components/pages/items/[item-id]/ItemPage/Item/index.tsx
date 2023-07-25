@@ -1,8 +1,8 @@
 import { Review } from '@/src/types/Items'
 import { Divider } from '@mantine/core'
 import { ItemBanner } from './Banner'
-import { ItemComments } from './Comments'
 import { ItemHeader } from './ItemHeader'
+import { ItemReviews } from './Reviews'
 
 export interface Props {
   name: string
@@ -32,7 +32,7 @@ export const LoadedItem = ({
         price={price}
       />
       <Divider my={10} />
-      <ItemComments reviews={reviews} itemId={itemId} />
+      <ItemReviews reviews={reviews} itemId={itemId} />
     </>
   )
 }

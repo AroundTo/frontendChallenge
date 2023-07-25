@@ -5,7 +5,7 @@ import { notifications } from '@mantine/notifications'
 import { useEffect, useState } from 'react'
 import { Check, MessageCircle } from 'tabler-icons-react'
 
-// GraphQL mutation for adding a comment
+// GraphQL mutation for adding a review
 const ADD_REVIEW_MUTATION = gql`
   mutation AddReview($itemId: String!, $text: String!) {
     addReview(input: { item: { name: $itemId }, text: $text }) {
@@ -15,27 +15,27 @@ const ADD_REVIEW_MUTATION = gql`
 `
 
 // Component definition
-export const AddAComment = ({ itemId }: { itemId: string }) => {
+export const AddAReview = ({ itemId }: { itemId: string }) => {
   const [addReview, { data: addReviewData, loading: addReviewLoading }] =
     useMutation<GraphQLAddReview>(ADD_REVIEW_MUTATION)
 
-  // State to track the comment text
-  const [commentText, setCommentText] = useState('')
+  // State to track the review text
+  const [reviewText, setReviewText] = useState('')
 
-  // Function to handle adding a comment
-  const handleComment = () => {
-    addReview({ variables: { itemId, text: commentText } })
-    setCommentText('')
+  // Function to handle adding a review
+  const handleReview = () => {
+    addReview({ variables: { itemId, text: reviewText } })
+    setReviewText('')
   }
 
-  // useEffect to show a notification after adding a comment
+  // useEffect to show a notification after adding a review
   useEffect(() => {
     if (addReviewData && addReviewData.addReview.numUids === 1)
       notifications.show({
         color: 'green',
         icon: <Check />,
-        title: 'Comment Added',
-        message: 'Your comment has been successfully added.',
+        title: 'Review Added',
+        message: 'Your review has been successfully added.',
       })
   }, [addReviewData])
 
@@ -43,17 +43,17 @@ export const AddAComment = ({ itemId }: { itemId: string }) => {
   return (
     <Card shadow="xs">
       <Textarea
-        placeholder="Add a comment"
-        value={commentText}
-        onChange={(event) => setCommentText(event.currentTarget.value)}
+        placeholder="Add a review"
+        value={reviewText}
+        onChange={(event) => setReviewText(event.currentTarget.value)}
       />
       <Group position="right" mt="xs">
         <Button
           leftIcon={<MessageCircle />}
           loading={addReviewLoading}
-          onClick={handleComment}
+          onClick={handleReview}
         >
-          {'Comment'}
+          {'Add review'}
         </Button>
       </Group>
     </Card>

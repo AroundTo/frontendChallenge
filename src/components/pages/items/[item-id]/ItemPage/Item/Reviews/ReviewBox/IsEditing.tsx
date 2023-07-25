@@ -1,8 +1,8 @@
 import { Button, Group, Textarea } from '@mantine/core'
 import { Dispatch, SetStateAction, useState } from 'react'
-import { EditCommentButton } from './EditCommentButton'
+import { EditReviewButton } from './EditReviewButton'
 
-// Component definition for editing a comment
+// Component definition for editing a review
 export const IsEditing = ({
   text,
   setIsEditing,
@@ -12,23 +12,23 @@ export const IsEditing = ({
   setIsEditing: Dispatch<SetStateAction<boolean>>
   id: string
 }) => {
-  const [commentText, setCommentText] = useState(text)
+  const [reviewText, setReviewText] = useState(text)
 
   return (
     <>
       <Textarea
         placeholder={text}
-        value={commentText}
-        onChange={(event) => setCommentText(event.currentTarget.value)}
+        value={reviewText}
+        onChange={(event) => setReviewText(event.currentTarget.value)}
       />
       <Group position="right" mt="xs">
         <Button variant="outline" onClick={() => setIsEditing(false)}>
           {'Cancel'}
         </Button>
-        <EditCommentButton
+        <EditReviewButton
           setIsEditing={setIsEditing}
           id={id}
-          commentText={commentText}
+          reviewText={reviewText}
         />
       </Group>
     </>

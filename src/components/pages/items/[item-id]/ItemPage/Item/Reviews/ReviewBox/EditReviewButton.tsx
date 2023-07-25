@@ -14,13 +14,13 @@ const EDIT_REVIEW_MUTATION = gql`
     }
   }
 `
-export const EditCommentButton = ({
-  commentText,
+export const EditReviewButton = ({
+  reviewText,
   id,
   setIsEditing,
 }: {
   setIsEditing: Dispatch<SetStateAction<boolean>>
-  commentText: string
+  reviewText: string
   id: string
 }) => {
   // GraphQL mutation for editing a review
@@ -28,20 +28,20 @@ export const EditCommentButton = ({
     useMutation<GraphQLUpdateReview>(EDIT_REVIEW_MUTATION)
 
   // Function to open the confirm edit modal
-  const openConfirmEditCommentModal = () =>
+  const openConfirmEditReviewModal = () =>
     modals.openConfirmModal({
       title: 'Confirm edit',
       children: (
         <Text size="sm">
           {
-            'Are you sure you want to edit this comment? Any changes made will overwrite the current content.'
+            'Are you sure you want to edit this review? Any changes made will overwrite the current content.'
           }
         </Text>
       ),
       labels: { confirm: 'Edit', cancel: 'Cancel' },
       onCancel: () => console.log('Cancel'),
       onConfirm: async () => {
-        editReview({ variables: { id, text: commentText } })
+        editReview({ variables: { id, text: reviewText } })
       },
     })
 
@@ -54,7 +54,7 @@ export const EditCommentButton = ({
           icon: <Check />,
           color: 'green',
           title: 'Edit Successful',
-          message: 'Your comment has been successfully edited.',
+          message: 'Your review has been successfully edited.',
         })
         setIsEditing(false)
       } else if (editReviewData.updateReview.numUids === 0) {
@@ -63,7 +63,7 @@ export const EditCommentButton = ({
           icon: <Edit />,
           color: 'red',
           title: 'Edit Failed',
-          message: 'Failed to edit the comment.',
+          message: 'Failed to edit the review.',
         })
       }
   }, [editReviewData, setIsEditing])
@@ -72,7 +72,7 @@ export const EditCommentButton = ({
     <Button
       leftIcon={<Edit />}
       loading={editReviewLoading}
-      onClick={openConfirmEditCommentModal}
+      onClick={openConfirmEditReviewModal}
     >
       {'Edit'}
     </Button>

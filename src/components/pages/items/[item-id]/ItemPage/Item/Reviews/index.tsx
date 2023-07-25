@@ -1,9 +1,9 @@
 import { Review } from '@/src/types/Items'
 import { Box, Title } from '@mantine/core'
-import { AddAComment } from './AddAComment'
-import { CommentBox } from './CommentBox'
+import { AddAReview } from './AddAReview'
+import { ReviewBox } from './ReviewBox'
 
-export const ItemComments = ({
+export const ItemReviews = ({
   reviews,
   itemId,
 }: {
@@ -13,11 +13,11 @@ export const ItemComments = ({
   return (
     <Box>
       <Title my="lg" order={1}>
-        {'Comments'}
+        {'Reviews'}
       </Title>
-      <AddAComment itemId={itemId} />
+      <AddAReview itemId={itemId} />
       {[...reviews].reverse().map(({ text, id }, index) => (
-        <CommentBox id={id} key={`comment-${id}`} text={text} index={index} />
+        <ReviewBox id={id} key={`review-${id}`} text={text} index={index} />
       ))}
     </Box>
   )
