@@ -13,10 +13,10 @@ export const ProductComments = ({
   return (
     <Box>
       <Title order={1}>{'Comments'}</Title>
-      {reviews.map(({ text, id }, index) => (
+      <AddAComment productId={productId} />
+      {[...reviews].reverse().map(({ text, id }, index) => (
         <CommentBox id={id} key={`comment-${id}`} text={text} index={index} />
       ))}
-      <AddAComment productId={productId} />
     </Box>
   )
 }

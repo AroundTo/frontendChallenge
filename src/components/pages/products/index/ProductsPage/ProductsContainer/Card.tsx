@@ -34,7 +34,7 @@ export const ProductCard = ({ product }: { product?: Product }) => {
         />
       </Card.Section>
       <Text size="xl">{`$${product.price}`}</Text>
-      <Text color="dimmed" size="sm">
+      <Text lineClamp={1} color="dimmed" size="sm">
         {product.name}
       </Text>
     </Card>

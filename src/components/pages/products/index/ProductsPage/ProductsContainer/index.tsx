@@ -21,11 +21,9 @@ export const ProductsContainer = () => {
         {!loading && data && data.queryItem ? (
           <>
             {data.queryItem.map((item, index) => (
-              <>
-                <Grid.Col md={3} xs={12} key={`item-${index}`}>
-                  <ProductCard product={item} />
-                </Grid.Col>
-              </>
+              <Grid.Col md={3} xs={12} key={`item-${index}`}>
+                <ProductCard product={item} />
+              </Grid.Col>
             ))}
           </>
         ) : (
