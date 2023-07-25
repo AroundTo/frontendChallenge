@@ -35,7 +35,7 @@ export const ItemPage = ({ itemId }: { itemId: string }) => {
             img={data.getItem.img}
             price={data.getItem.price}
             reviews={data.getItem.reviews}
-            productId={itemId}
+            itemId={itemId}
           />
         ) : (
           <LoadingItem />

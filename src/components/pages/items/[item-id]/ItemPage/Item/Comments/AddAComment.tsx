@@ -7,15 +7,15 @@ import { Check, MessageCircle } from 'tabler-icons-react'
 
 // GraphQL mutation for adding a comment
 const ADD_REVIEW_MUTATION = gql`
-  mutation AddReview($productId: String!, $text: String!) {
-    addReview(input: { item: { name: $productId }, text: $text }) {
+  mutation AddReview($itemId: String!, $text: String!) {
+    addReview(input: { item: { name: $itemId }, text: $text }) {
       numUids
     }
   }
 `
 
 // Component definition
-export const AddAComment = ({ productId }: { productId: string }) => {
+export const AddAComment = ({ itemId }: { itemId: string }) => {
   const [addReview, { data: addReviewData, loading: addReviewLoading }] =
     useMutation<GraphQLAddReview>(ADD_REVIEW_MUTATION)
 
@@ -24,7 +24,7 @@ export const AddAComment = ({ productId }: { productId: string }) => {
 
   // Function to handle adding a comment
   const handleComment = () => {
-    addReview({ variables: { productId, text: commentText } })
+    addReview({ variables: { itemId, text: commentText } })
     setCommentText('')
   }
 

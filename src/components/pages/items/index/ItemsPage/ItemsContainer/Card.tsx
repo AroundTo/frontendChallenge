@@ -3,8 +3,8 @@ import { Item } from '@/src/types/Items'
 import { Card, Image, Skeleton, Text } from '@mantine/core'
 import Link from 'next/link'
 
-export const ItemCard = ({ product }: { product?: Item }) => {
-  if (!product)
+export const ItemCard = ({ item }: { item?: Item }) => {
+  if (!item)
     return (
       <Card shadow="sm" radius="md" withBorder>
         <Card.Section>
@@ -21,21 +21,21 @@ export const ItemCard = ({ product }: { product?: Item }) => {
       radius="md"
       withBorder
       component={Link}
-      href={`${APP_URLS.PRODUCTS}/${product.name}`}
+      href={`${APP_URLS.PRODUCTS}/${item.name}`}
     >
       <Card.Section>
         <Image
           p="xs"
           bg="gray.2"
-          alt={product.name}
+          alt={item.name}
           fit="contain"
           height={200}
-          src={product?.img}
+          src={item?.img}
         />
       </Card.Section>
-      <Text size="xl">{`$${product.price}`}</Text>
+      <Text size="xl">{`$${item.price}`}</Text>
       <Text lineClamp={1} color="dimmed" size="sm">
-        {product.name}
+        {item.name}
       </Text>
     </Card>
   )

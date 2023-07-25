@@ -48,13 +48,13 @@ export const DeleteItemButton = ({ name }: { name: string }) => {
             color: 'red',
             icon: <TrashX />,
             title: 'Deletion Failed',
-            message: 'Failed to delete the product.',
+            message: 'Failed to delete the item.',
           })
         }
       },
     })
 
-  // useEffect to handle notifications after deleting a product
+  // useEffect to handle notifications after deleting an item
   useEffect(() => {
     if (deleteItemData)
       if (deleteItemData.deleteItem.numUids === 1) {

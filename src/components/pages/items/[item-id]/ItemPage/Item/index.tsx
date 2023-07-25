@@ -10,7 +10,7 @@ export interface Props {
   img: string
   price: number
   reviews: Review[]
-  productId: string
+  itemId: string
 }
 
 export const LoadedItem = ({
@@ -19,7 +19,7 @@ export const LoadedItem = ({
   img,
   price,
   reviews,
-  productId,
+  itemId,
 }: Props) => {
   return (
     <>
@@ -32,7 +32,7 @@ export const LoadedItem = ({
         price={price}
       />
       <Divider my={10} />
-      <ItemComments reviews={reviews} productId={productId} />
+      <ItemComments reviews={reviews} itemId={itemId} />
     </>
   )
 }

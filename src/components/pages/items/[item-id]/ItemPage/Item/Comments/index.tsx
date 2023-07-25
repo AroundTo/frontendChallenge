@@ -5,17 +5,17 @@ import { CommentBox } from './CommentBox'
 
 export const ItemComments = ({
   reviews,
-  productId,
+  itemId,
 }: {
   reviews: Review[]
-  productId: string
+  itemId: string
 }) => {
   return (
     <Box>
       <Title my="lg" order={1}>
         {'Comments'}
       </Title>
-      <AddAComment productId={productId} />
+      <AddAComment itemId={itemId} />
       {[...reviews].reverse().map(({ text, id }, index) => (
         <CommentBox id={id} key={`comment-${id}`} text={text} index={index} />
       ))}

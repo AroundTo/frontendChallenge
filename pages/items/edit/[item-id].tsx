@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 export const EditItemNextPage: NextPage = () => {
   const itemId = useRouter().query['item-id'] as string
-  return <EditItemPage productId={itemId} />
+  return <EditItemPage itemId={itemId} />
 }
 
 export default EditItemNextPage

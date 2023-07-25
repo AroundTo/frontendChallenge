@@ -22,7 +22,7 @@ export const ItemsContainer = () => {
           <>
             {data.queryItem.map((item, index) => (
               <Grid.Col md={3} xs={12} key={`item-${index}`}>
-                <ItemCard product={item} />
+                <ItemCard item={item} />
               </Grid.Col>
             ))}
           </>

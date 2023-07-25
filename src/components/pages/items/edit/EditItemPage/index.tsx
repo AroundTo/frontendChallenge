@@ -6,10 +6,10 @@ import { EditItemBreadcrums } from './Breadcrums'
 import { EditItemForm } from './EditItemForm'
 import { LoadingEditItemPage } from './Loading'
 
-export const EditItemPage = ({ productId }: { productId: string }) => {
+export const EditItemPage = ({ itemId }: { itemId: string }) => {
   const { data, loading } = useQuery<GraphQLItem>(gql`
   query GetItem {
-    getItem(name: "${productId}") {
+    getItem(name: "${itemId}") {
         name
         img
         price
@@ -32,7 +32,7 @@ export const EditItemPage = ({ productId }: { productId: string }) => {
       <Container mt={20}>
         {!loading && data && data.getItem ? (
           <>
-            <EditItemBreadcrums productId={data?.getItem.name || 'item'} />
+            <EditItemBreadcrums itemId={data?.getItem.name || 'item'} />
             <Divider my={10} />
             <Title>{`Edit ${data?.getItem.name || 'item'}`}</Title>
             <EditItemForm
