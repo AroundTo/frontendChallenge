@@ -28,6 +28,7 @@ export const ReviewsContainer = () => {
                   name={review.item.name}
                   description={review.item.description}
                   img={review.item.img}
+                  text={review.text}
                 />
               )}
             </div>

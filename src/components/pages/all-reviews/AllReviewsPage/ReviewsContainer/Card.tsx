@@ -1,15 +1,17 @@
 import { APP_URLS } from '@/src/constants/URLS'
-import { Card, Flex, Image, Skeleton, Text } from '@mantine/core'
+import { Blockquote, Card, Flex, Image, Skeleton, Text } from '@mantine/core'
 import Link from 'next/link'
 
 export const ReviewCard = ({
   name,
   description,
   img,
+  text,
 }: {
   name: string
   description: string
   img: string
+  text: string
 }) => {
   return (
     <Card
@@ -18,15 +20,30 @@ export const ReviewCard = ({
       my="xl"
       shadow="xs"
     >
-      <Flex>
-        <Image alt={name} fit="contain" width={100} height={100} src={img} />
-        <Flex direction="column" mx="xl" justify="center">
-          <Text size="lg">{name}</Text>
-          <Text lineClamp={2} color="dimmed" size="sm">
-            {description}
-          </Text>
-        </Flex>
-      </Flex>
+      <Blockquote
+        cite={
+          <Flex align="center">
+            <Image
+              radius="xl"
+              alt={name}
+              fit="cover"
+              width={30}
+              height={30}
+              src={img}
+            />
+            <Flex direction="column" mx="xs" justify="center">
+              <Text weight="bold" size="sm">
+                {name}
+              </Text>
+              <Text lineClamp={1} color="dimmed" size="xs">
+                {description}
+              </Text>
+            </Flex>
+          </Flex>
+        }
+      >
+        {text}
+      </Blockquote>
     </Card>
   )
 }
@@ -34,16 +51,20 @@ export const ReviewCard = ({
 export const LoadingReviewCard = () => {
   return (
     <Card my="xl" shadow="xs">
-      <Flex>
-        <Flex w={100}>
-          <Skeleton radius="md" width={100} height={100} />
-        </Flex>
-        <Flex w="100%" direction="column" mx="xl" justify="center">
-          <Skeleton mt={8} h={20} />
-          <Skeleton mb={4} mt={20} h={12} />
-          <Skeleton mb={4} w="50%" mt={4} h={12} />
-        </Flex>
-      </Flex>
+      <Blockquote
+        cite={
+          <Flex align="center">
+            <Skeleton radius="md" width={30} height={30} />
+            <Flex gap={8} w="100%" direction="column" mx="xs" justify="center">
+              <Skeleton h={10} />
+              <Skeleton h={10} />
+            </Flex>
+          </Flex>
+        }
+      >
+        <Skeleton mb={4} w="95%" h={20} />
+        <Skeleton mb={4} w="50%" mt={8} h={20} />
+      </Blockquote>
     </Card>
   )
 }
