@@ -18,16 +18,13 @@ export default function App(props: AppProps) {
   const { Component, pageProps } = props
 
   const httpLink = createHttpLink({
-    uri: process.env.NEXT_PUBLIC_REACT_APP_GRAPHQL_API_HTTPS || '',
+    uri: process.env.NEXT_PUBLIC_GRAPHQL_LINK_HTTPS || '',
   })
   const wsLink = new WebSocketLink(
-    new SubscriptionClient(
-      process.env.NEXT_PUBLIC_REACT_APP_GRAPHQL_API_WSS || '',
-      {
-        reconnect: true,
-        timeout: 3000,
-      }
-    )
+    new SubscriptionClient(process.env.NEXT_PUBLIC_GRAPHQL_LINK_WSS || '', {
+      reconnect: true,
+      timeout: 3000,
+    })
   )
 
   const splitLink = split(
