@@ -1,5 +1,6 @@
 import { Box, useMantineTheme } from '@mantine/core'
-import { getBackgroundPattern } from './src/getBackgroundPattern'
+
+import { BackgroundPatternImage } from './BackgroundPatternImage'
 
 export const BackgroundPattern = ({
   children,
@@ -23,8 +24,7 @@ export const BackgroundPattern = ({
         transition: '1000ms',
 
         backgroundColor: theme.colors.pink[6],
-        backgroundImage: getBackgroundPattern(
-          'signal',
+        backgroundImage: BackgroundPatternImage(
           theme.colors.dark[8].replace('#', ''),
           0.2
         ),

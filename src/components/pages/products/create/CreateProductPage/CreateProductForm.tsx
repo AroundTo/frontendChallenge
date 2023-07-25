@@ -65,7 +65,11 @@ export const CreateProductForm = () => {
         description: values.description,
       },
     }).catch((error) => {
-      console.error('Error adding item:', error.message)
+      notifications.show({
+        color: 'red',
+        title: 'Add Item Failed',
+        message: error.message,
+      })
     })
   }
 
