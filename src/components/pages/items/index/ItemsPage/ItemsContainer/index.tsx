@@ -17,7 +17,7 @@ export const ItemsContainer = () => {
 
   return (
     <>
-      <Grid p="xl">
+      <Grid p="xl" my={30}>
         {!loading && data && data.queryItem ? (
           <>
             {data.queryItem.map((item, index) => (
